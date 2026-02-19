@@ -5,7 +5,7 @@ module DeliveryFivePostClient
     module API
       module V1
         module Partners
-          # @see DeliveryFivePostClient::Resources::API::V1::Partners::PartnerSupply#retrieve
+          # @see DeliveryFivePostClient::Resources::API::V1::Partners::PartnerSupply#create
           class SupplyInfo < DeliveryFivePostClient::Internal::Type::BaseModel
             # @!attribute cargoes
             #   Грузоместа / Cargoes

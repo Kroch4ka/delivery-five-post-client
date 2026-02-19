@@ -6,6 +6,35 @@ module DeliveryFivePostClient
       class V1
         class Partners
           class PartnerSupply
+            # Создание поставки товаров на склад / Create supply to warehouse
+            #
+            # @overload create(cargoes:, planned_date:, supply_type:, warehouse_id:, request_options: {})
+            #
+            # @param cargoes [Array<DeliveryFivePostClient::Models::API::V1::Partners::SupplyCargo>] Грузоместа в поставке / Cargoes
+            #
+            # @param planned_date [Date] Плановая дата поставки / Planned date
+            #
+            # @param supply_type [Symbol, DeliveryFivePostClient::Models::API::V1::Partners::SupplyType] Тип поставки / Supply type
+            #
+            # @param warehouse_id [String] UUID в формате v4 / UUID in v4 format
+            #
+            # @param request_options [DeliveryFivePostClient::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [DeliveryFivePostClient::Models::API::V1::Partners::SupplyInfo]
+            #
+            # @see DeliveryFivePostClient::Models::API::V1::Partners::PartnerSupplyCreateParams
+            def create(params)
+              parsed, options =
+                DeliveryFivePostClient::API::V1::Partners::PartnerSupplyCreateParams.dump_request(params)
+              @client.request(
+                method: :post,
+                path: "api/v1/partners/partnerSupply/",
+                body: parsed,
+                model: DeliveryFivePostClient::API::V1::Partners::SupplyInfo,
+                options: options
+              )
+            end
+
             # Получение сведений о поставке / Get supply information
             #
             # @overload retrieve(supply_id, request_options: {})

@@ -6,6 +6,33 @@ module DeliveryFivePostClient
       class V1
         class Partners
           class PartnerSupply
+            # Создание поставки товаров на склад / Create supply to warehouse
+            sig do
+              params(
+                cargoes:
+                  T::Array[
+                    DeliveryFivePostClient::API::V1::Partners::SupplyCargo::OrHash
+                  ],
+                planned_date: Date,
+                supply_type:
+                  DeliveryFivePostClient::API::V1::Partners::SupplyType::OrSymbol,
+                warehouse_id: String,
+                request_options: DeliveryFivePostClient::RequestOptions::OrHash
+              ).returns(DeliveryFivePostClient::API::V1::Partners::SupplyInfo)
+            end
+            def create(
+              # Грузоместа в поставке / Cargoes
+              cargoes:,
+              # Плановая дата поставки / Planned date
+              planned_date:,
+              # Тип поставки / Supply type
+              supply_type:,
+              # UUID в формате v4 / UUID in v4 format
+              warehouse_id:,
+              request_options: {}
+            )
+            end
+
             # Получение сведений о поставке / Get supply information
             sig do
               params(

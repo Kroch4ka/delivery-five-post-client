@@ -108,6 +108,7 @@ require_relative "delivery_five_post_client/models/api/v1/partners/orders/vat_ra
 require_relative "delivery_five_post_client/models/api/v1/partners/orders/vendor_info"
 require_relative "delivery_five_post_client/models/api/v1/partners/order_update_client_info_params"
 require_relative "delivery_five_post_client/models/api/v1/partners/order_update_payment_value_params"
+require_relative "delivery_five_post_client/models/api/v1/partners/partner_supply_create_params"
 require_relative "delivery_five_post_client/models/api/v1/partners/partner_supply_delete_params"
 require_relative "delivery_five_post_client/models/api/v1/partners/partner_supply_delete_response"
 require_relative "delivery_five_post_client/models/api/v1/partners/partner_supply_retrieve_params"

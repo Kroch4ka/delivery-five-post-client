@@ -1,0 +1,21 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type supply_cargo = { barcode: String, order_id: String }
+
+          class SupplyCargo < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor barcode: String
+
+            attr_accessor order_id: String
+
+            def initialize: (barcode: String, order_id: String) -> void
+
+            def to_hash: -> { barcode: String, order_id: String }
+          end
+        end
+      end
+    end
+  end
+end

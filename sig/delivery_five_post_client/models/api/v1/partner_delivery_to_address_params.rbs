@@ -1,0 +1,59 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_delivery_to_address_params =
+          {
+            delivery_address: DeliveryFivePostClient::API::V1::Address,
+            dimensions: DeliveryFivePostClient::API::V1::PartnerDeliveryToAddressParams::Dimensions,
+            sender_location_id: String,
+            weight: Float
+          }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerDeliveryToAddressParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_accessor delivery_address: DeliveryFivePostClient::API::V1::Address
+
+          attr_accessor dimensions: DeliveryFivePostClient::API::V1::PartnerDeliveryToAddressParams::Dimensions
+
+          attr_accessor sender_location_id: String
+
+          attr_accessor weight: Float
+
+          def initialize: (
+            delivery_address: DeliveryFivePostClient::API::V1::Address,
+            dimensions: DeliveryFivePostClient::API::V1::PartnerDeliveryToAddressParams::Dimensions,
+            sender_location_id: String,
+            weight: Float,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            delivery_address: DeliveryFivePostClient::API::V1::Address,
+            dimensions: DeliveryFivePostClient::API::V1::PartnerDeliveryToAddressParams::Dimensions,
+            sender_location_id: String,
+            weight: Float,
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+
+          type dimensions = { height: Float, length: Float, width: Float }
+
+          class Dimensions < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor height: Float
+
+            attr_accessor length: Float
+
+            attr_accessor width: Float
+
+            def initialize: (height: Float, length: Float, width: Float) -> void
+
+            def to_hash: -> { height: Float, length: Float, width: Float }
+          end
+        end
+      end
+    end
+  end
+end

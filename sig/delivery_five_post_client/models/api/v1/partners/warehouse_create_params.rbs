@@ -1,0 +1,47 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type warehouse_create_params =
+            {
+              address: DeliveryFivePostClient::API::V1::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::Contacts,
+              external_id: String,
+              name: String
+            }
+            & DeliveryFivePostClient::Internal::Type::request_parameters
+
+          class WarehouseCreateParams < DeliveryFivePostClient::Internal::Type::BaseModel
+            extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+            include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_accessor address: DeliveryFivePostClient::API::V1::Address
+
+            attr_accessor contacts: DeliveryFivePostClient::API::V1::Partners::Contacts
+
+            attr_accessor external_id: String
+
+            attr_accessor name: String
+
+            def initialize: (
+              address: DeliveryFivePostClient::API::V1::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::Contacts,
+              external_id: String,
+              name: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              address: DeliveryFivePostClient::API::V1::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::Contacts,
+              external_id: String,
+              name: String,
+              request_options: DeliveryFivePostClient::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

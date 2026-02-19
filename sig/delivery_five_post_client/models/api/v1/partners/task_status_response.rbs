@@ -1,0 +1,38 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type task_status_response =
+            {
+              status: DeliveryFivePostClient::Models::API::V1::Partners::task_status,
+              task_id: String,
+              error_message: String
+            }
+
+          class TaskStatusResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor status: DeliveryFivePostClient::Models::API::V1::Partners::task_status
+
+            attr_accessor task_id: String
+
+            attr_reader error_message: String?
+
+            def error_message=: (String) -> String
+
+            def initialize: (
+              status: DeliveryFivePostClient::Models::API::V1::Partners::task_status,
+              task_id: String,
+              ?error_message: String
+            ) -> void
+
+            def to_hash: -> {
+              status: DeliveryFivePostClient::Models::API::V1::Partners::task_status,
+              task_id: String,
+              error_message: String
+            }
+          end
+        end
+      end
+    end
+  end
+end

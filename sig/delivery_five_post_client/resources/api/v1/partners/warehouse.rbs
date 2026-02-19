@@ -1,0 +1,34 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Partners
+          class Warehouse
+            def create: (
+              address: DeliveryFivePostClient::API::V1::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::Contacts,
+              external_id: String,
+              name: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::Models::API::V1::Partners::WarehouseCreateResponse
+
+            def retrieve: (
+              String id,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::API::V1::Partners::WarehouseInfo
+
+            def update: (
+              String id,
+              ?address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address,
+              ?contacts: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts,
+              ?name: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::API::V1::Partners::WarehouseInfo
+
+            def initialize: (client: DeliveryFivePostClient::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,24 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Partners
+          class Redirection
+            def create: (
+              new_location_id: String,
+              order_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::Models::API::V1::Partners::RedirectionCreateResponse
+
+            def status: (
+              task_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::API::V1::Partners::TaskStatusResponse
+
+            def initialize: (client: DeliveryFivePostClient::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

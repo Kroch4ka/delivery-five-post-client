@@ -1,0 +1,41 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type tariff_c2c_response =
+          {
+            currency: DeliveryFivePostClient::Models::API::V1::currency,
+            delivery_cost: Float,
+            delivery_days: Integer,
+            rate_zone: String
+          }
+
+        class TariffC2cResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor currency: DeliveryFivePostClient::Models::API::V1::currency
+
+          attr_accessor delivery_cost: Float
+
+          attr_accessor delivery_days: Integer
+
+          attr_reader rate_zone: String?
+
+          def rate_zone=: (String) -> String
+
+          def initialize: (
+            currency: DeliveryFivePostClient::Models::API::V1::currency,
+            delivery_cost: Float,
+            delivery_days: Integer,
+            ?rate_zone: String
+          ) -> void
+
+          def to_hash: -> {
+            currency: DeliveryFivePostClient::Models::API::V1::currency,
+            delivery_cost: Float,
+            delivery_days: Integer,
+            rate_zone: String
+          }
+        end
+      end
+    end
+  end
+end

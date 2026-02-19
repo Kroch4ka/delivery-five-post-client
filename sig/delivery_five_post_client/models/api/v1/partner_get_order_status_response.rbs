@@ -1,0 +1,77 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_order_status_response =
+          {
+            orders: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderStatusResponse::Order]
+          }
+
+        class PartnerGetOrderStatusResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor orders: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderStatusResponse::Order]
+
+          def initialize: (
+            orders: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderStatusResponse::Order]
+          ) -> void
+
+          def to_hash: -> {
+            orders: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderStatusResponse::Order]
+          }
+
+          type order =
+            {
+              change_date: Time,
+              execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+              order_id: String,
+              sender_order_id: String,
+              status: String,
+              error_desc: String,
+              mile_type: DeliveryFivePostClient::Models::mile_type
+            }
+
+          class Order < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor change_date: Time
+
+            attr_accessor execution_status: DeliveryFivePostClient::Models::API::V1::execution_status
+
+            attr_accessor order_id: String
+
+            attr_accessor sender_order_id: String
+
+            attr_accessor status: String
+
+            attr_reader error_desc: String?
+
+            def error_desc=: (String) -> String
+
+            attr_reader mile_type: DeliveryFivePostClient::Models::mile_type?
+
+            def mile_type=: (
+              DeliveryFivePostClient::Models::mile_type
+            ) -> DeliveryFivePostClient::Models::mile_type
+
+            def initialize: (
+              change_date: Time,
+              execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+              order_id: String,
+              sender_order_id: String,
+              status: String,
+              ?error_desc: String,
+              ?mile_type: DeliveryFivePostClient::Models::mile_type
+            ) -> void
+
+            def to_hash: -> {
+              change_date: Time,
+              execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+              order_id: String,
+              sender_order_id: String,
+              status: String,
+              error_desc: String,
+              mile_type: DeliveryFivePostClient::Models::mile_type
+            }
+          end
+        end
+      end
+    end
+  end
+end

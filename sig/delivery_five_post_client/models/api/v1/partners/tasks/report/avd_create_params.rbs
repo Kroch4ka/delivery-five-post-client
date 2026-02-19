@@ -1,0 +1,38 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          module Tasks
+            module Report
+              type avd_create_params =
+                { date_from: Date, date_to: Date }
+                & DeliveryFivePostClient::Internal::Type::request_parameters
+
+              class AvdCreateParams < DeliveryFivePostClient::Internal::Type::BaseModel
+                extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+                include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+                attr_accessor date_from: Date
+
+                attr_accessor date_to: Date
+
+                def initialize: (
+                  date_from: Date,
+                  date_to: Date,
+                  ?request_options: DeliveryFivePostClient::request_opts
+                ) -> void
+
+                def to_hash: -> {
+                  date_from: Date,
+                  date_to: Date,
+                  request_options: DeliveryFivePostClient::RequestOptions
+                }
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

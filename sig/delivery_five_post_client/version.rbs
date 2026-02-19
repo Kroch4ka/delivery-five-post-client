@@ -1,0 +1,3 @@
+module DeliveryFivePostClient
+  VERSION: String
+end

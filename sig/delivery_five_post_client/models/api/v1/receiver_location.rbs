@@ -1,0 +1,23 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type receiver_location = { location_id: String, mdm_code: String }
+
+        class ReceiverLocation < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_reader location_id: String?
+
+          def location_id=: (String) -> String
+
+          attr_reader mdm_code: String?
+
+          def mdm_code=: (String) -> String
+
+          def initialize: (?location_id: String, ?mdm_code: String) -> void
+
+          def to_hash: -> { location_id: String, mdm_code: String }
+        end
+      end
+    end
+  end
+end

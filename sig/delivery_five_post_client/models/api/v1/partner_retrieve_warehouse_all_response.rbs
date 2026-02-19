@@ -1,0 +1,24 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_retrieve_warehouse_all_response =
+          {
+            warehouses: ::Array[DeliveryFivePostClient::API::V1::Partners::WarehouseInfo]
+          }
+
+        class PartnerRetrieveWarehouseAllResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor warehouses: ::Array[DeliveryFivePostClient::API::V1::Partners::WarehouseInfo]
+
+          def initialize: (
+            warehouses: ::Array[DeliveryFivePostClient::API::V1::Partners::WarehouseInfo]
+          ) -> void
+
+          def to_hash: -> {
+            warehouses: ::Array[DeliveryFivePostClient::API::V1::Partners::WarehouseInfo]
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,13 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V2
+        attr_reader partners: DeliveryFivePostClient::Resources::API::V2::Partners
+
+        attr_reader points: DeliveryFivePostClient::Resources::API::V2::Points
+
+        def initialize: (client: DeliveryFivePostClient::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,30 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type order_status_request =
+          { order_ids: ::Array[String], sender_order_ids: ::Array[String] }
+
+        class OrderStatusRequest < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_reader order_ids: ::Array[String]?
+
+          def order_ids=: (::Array[String]) -> ::Array[String]
+
+          attr_reader sender_order_ids: ::Array[String]?
+
+          def sender_order_ids=: (::Array[String]) -> ::Array[String]
+
+          def initialize: (
+            ?order_ids: ::Array[String],
+            ?sender_order_ids: ::Array[String]
+          ) -> void
+
+          def to_hash: -> {
+            order_ids: ::Array[String],
+            sender_order_ids: ::Array[String]
+          }
+        end
+      end
+    end
+  end
+end

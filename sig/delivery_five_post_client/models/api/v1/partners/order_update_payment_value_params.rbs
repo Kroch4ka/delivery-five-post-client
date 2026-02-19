@@ -1,0 +1,30 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type order_update_payment_value_params =
+            { payment_value: Float }
+            & DeliveryFivePostClient::Internal::Type::request_parameters
+
+          class OrderUpdatePaymentValueParams < DeliveryFivePostClient::Internal::Type::BaseModel
+            extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+            include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_accessor payment_value: Float
+
+            def initialize: (
+              payment_value: Float,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              payment_value: Float,
+              request_options: DeliveryFivePostClient::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

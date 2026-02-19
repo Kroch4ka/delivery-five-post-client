@@ -1,0 +1,21 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type jwt_generate_response = { token: String, expires_in: Integer }
+
+          class JwtGenerateResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor token: String
+
+            attr_accessor expires_in: Integer
+
+            def initialize: (token: String, expires_in: Integer) -> void
+
+            def to_hash: -> { token: String, expires_in: Integer }
+          end
+        end
+      end
+    end
+  end
+end

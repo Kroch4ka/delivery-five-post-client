@@ -1,0 +1,75 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_delivery_params_response =
+          {
+            zones: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerDeliveryParamsResponse::Zone]
+          }
+
+        class PartnerDeliveryParamsResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor zones: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerDeliveryParamsResponse::Zone]
+
+          def initialize: (
+            zones: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerDeliveryParamsResponse::Zone]
+          ) -> void
+
+          def to_hash: -> {
+            zones: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerDeliveryParamsResponse::Zone]
+          }
+
+          type zone =
+            {
+              city: String,
+              is_available: bool,
+              region: String,
+              zone_id: String,
+              zone_name: String,
+              max_delivery_days: Integer,
+              min_delivery_days: Integer
+            }
+
+          class Zone < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor city: String
+
+            attr_accessor is_available: bool
+
+            attr_accessor region: String
+
+            attr_accessor zone_id: String
+
+            attr_accessor zone_name: String
+
+            attr_reader max_delivery_days: Integer?
+
+            def max_delivery_days=: (Integer) -> Integer
+
+            attr_reader min_delivery_days: Integer?
+
+            def min_delivery_days=: (Integer) -> Integer
+
+            def initialize: (
+              city: String,
+              is_available: bool,
+              region: String,
+              zone_id: String,
+              zone_name: String,
+              ?max_delivery_days: Integer,
+              ?min_delivery_days: Integer
+            ) -> void
+
+            def to_hash: -> {
+              city: String,
+              is_available: bool,
+              region: String,
+              zone_id: String,
+              zone_name: String,
+              max_delivery_days: Integer,
+              min_delivery_days: Integer
+            }
+          end
+        end
+      end
+    end
+  end
+end

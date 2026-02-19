@@ -1,0 +1,60 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type tariff_c2c_params =
+          {
+            assessed_value: Float,
+            from_location_id: String,
+            height: Float,
+            length: Float,
+            to_location_id: String,
+            weight: Float,
+            width: Float
+          }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class TariffC2cParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_accessor assessed_value: Float
+
+          attr_accessor from_location_id: String
+
+          attr_accessor height: Float
+
+          attr_accessor length: Float
+
+          attr_accessor to_location_id: String
+
+          attr_accessor weight: Float
+
+          attr_accessor width: Float
+
+          def initialize: (
+            assessed_value: Float,
+            from_location_id: String,
+            height: Float,
+            length: Float,
+            to_location_id: String,
+            weight: Float,
+            width: Float,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            assessed_value: Float,
+            from_location_id: String,
+            height: Float,
+            length: Float,
+            to_location_id: String,
+            weight: Float,
+            width: Float,
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

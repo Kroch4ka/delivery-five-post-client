@@ -1,0 +1,33 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Partners
+          class Tasks
+            class Report
+              class Avds
+                def create: (
+                  date_from: Date,
+                  date_to: Date,
+                  ?request_options: DeliveryFivePostClient::request_opts
+                ) -> DeliveryFivePostClient::Models::API::V1::Partners::Tasks::Report::AvdCreateResponse
+
+                def result: (
+                  task_id: String,
+                  ?request_options: DeliveryFivePostClient::request_opts
+                ) -> StringIO
+
+                def status: (
+                  task_id: String,
+                  ?request_options: DeliveryFivePostClient::request_opts
+                ) -> DeliveryFivePostClient::Models::API::V1::Partners::Tasks::Report::AvdStatusResponse
+
+                def initialize: (client: DeliveryFivePostClient::Client) -> void
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

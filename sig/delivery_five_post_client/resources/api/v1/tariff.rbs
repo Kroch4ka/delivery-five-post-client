@@ -1,0 +1,22 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Tariff
+          def c2c: (
+            assessed_value: Float,
+            from_location_id: String,
+            height: Float,
+            length: Float,
+            to_location_id: String,
+            weight: Float,
+            width: Float,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::TariffC2cResponse
+
+          def initialize: (client: DeliveryFivePostClient::Client) -> void
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,30 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type jwt_generate_params =
+            { apikey: String }
+            & DeliveryFivePostClient::Internal::Type::request_parameters
+
+          class JwtGenerateParams < DeliveryFivePostClient::Internal::Type::BaseModel
+            extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+            include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_accessor apikey: String
+
+            def initialize: (
+              apikey: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              apikey: String,
+              request_options: DeliveryFivePostClient::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,22 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type supply_status = :CREATED | :IN_PROGRESS | :COMPLETED | :CANCELLED
+
+          module SupplyStatus
+            extend DeliveryFivePostClient::Internal::Type::Enum
+
+            CREATED: :CREATED
+            IN_PROGRESS: :IN_PROGRESS
+            COMPLETED: :COMPLETED
+            CANCELLED: :CANCELLED
+
+            def self?.values: -> ::Array[DeliveryFivePostClient::Models::API::V1::Partners::supply_status]
+          end
+        end
+      end
+    end
+  end
+end

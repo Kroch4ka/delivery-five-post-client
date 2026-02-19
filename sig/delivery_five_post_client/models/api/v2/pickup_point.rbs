@@ -1,0 +1,192 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V2
+        type pickup_point =
+          {
+            id: String,
+            active: bool,
+            additional: ::Array[String],
+            address: String,
+            city: String,
+            delivery_sl: ::Array[String],
+            latitude: Float,
+            longitude: Float,
+            max_height: Float,
+            max_length: Float,
+            max_weight: Float,
+            max_width: Float,
+            mdm_code: String,
+            multiplace_delivery: bool,
+            name: String,
+            phone: String,
+            ready: bool,
+            region: String,
+            work_time: String,
+            last_mile_warehouse: DeliveryFivePostClient::API::V2::PickupPoint::LastMileWarehouse,
+            min_delivery_days: Integer,
+            rate: DeliveryFivePostClient::API::V2::PickupPoint::Rate
+          }
+
+        class PickupPoint < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor active: bool
+
+          attr_accessor additional: ::Array[String]
+
+          attr_accessor address: String
+
+          attr_accessor city: String
+
+          attr_accessor delivery_sl: ::Array[String]
+
+          attr_accessor latitude: Float
+
+          attr_accessor longitude: Float
+
+          attr_accessor max_height: Float
+
+          attr_accessor max_length: Float
+
+          attr_accessor max_weight: Float
+
+          attr_accessor max_width: Float
+
+          attr_accessor mdm_code: String
+
+          attr_accessor multiplace_delivery: bool
+
+          attr_accessor name: String
+
+          attr_accessor phone: String
+
+          attr_accessor ready: bool
+
+          attr_accessor region: String
+
+          attr_accessor work_time: String
+
+          attr_reader last_mile_warehouse: DeliveryFivePostClient::API::V2::PickupPoint::LastMileWarehouse?
+
+          def last_mile_warehouse=: (
+            DeliveryFivePostClient::API::V2::PickupPoint::LastMileWarehouse
+          ) -> DeliveryFivePostClient::API::V2::PickupPoint::LastMileWarehouse
+
+          attr_reader min_delivery_days: Integer?
+
+          def min_delivery_days=: (Integer) -> Integer
+
+          attr_reader rate: DeliveryFivePostClient::API::V2::PickupPoint::Rate?
+
+          def rate=: (
+            DeliveryFivePostClient::API::V2::PickupPoint::Rate
+          ) -> DeliveryFivePostClient::API::V2::PickupPoint::Rate
+
+          def initialize: (
+            id: String,
+            active: bool,
+            additional: ::Array[String],
+            address: String,
+            city: String,
+            delivery_sl: ::Array[String],
+            latitude: Float,
+            longitude: Float,
+            max_height: Float,
+            max_length: Float,
+            max_weight: Float,
+            max_width: Float,
+            mdm_code: String,
+            multiplace_delivery: bool,
+            name: String,
+            phone: String,
+            ready: bool,
+            region: String,
+            work_time: String,
+            ?last_mile_warehouse: DeliveryFivePostClient::API::V2::PickupPoint::LastMileWarehouse,
+            ?min_delivery_days: Integer,
+            ?rate: DeliveryFivePostClient::API::V2::PickupPoint::Rate
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            active: bool,
+            additional: ::Array[String],
+            address: String,
+            city: String,
+            delivery_sl: ::Array[String],
+            latitude: Float,
+            longitude: Float,
+            max_height: Float,
+            max_length: Float,
+            max_weight: Float,
+            max_width: Float,
+            mdm_code: String,
+            multiplace_delivery: bool,
+            name: String,
+            phone: String,
+            ready: bool,
+            region: String,
+            work_time: String,
+            last_mile_warehouse: DeliveryFivePostClient::API::V2::PickupPoint::LastMileWarehouse,
+            min_delivery_days: Integer,
+            rate: DeliveryFivePostClient::API::V2::PickupPoint::Rate
+          }
+
+          type last_mile_warehouse = { id: String, name: String }
+
+          class LastMileWarehouse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor id: String
+
+            attr_accessor name: String
+
+            def initialize: (id: String, name: String) -> void
+
+            def to_hash: -> { id: String, name: String }
+          end
+
+          type rate =
+            {
+              rate_value: Float,
+              rate_value_with_vat: Float,
+              vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+              rate_extra_value: Float,
+              rate_extra_value_with_vat: Float
+            }
+
+          class Rate < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor rate_value: Float
+
+            attr_accessor rate_value_with_vat: Float
+
+            attr_accessor vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate
+
+            attr_reader rate_extra_value: Float?
+
+            def rate_extra_value=: (Float) -> Float
+
+            attr_reader rate_extra_value_with_vat: Float?
+
+            def rate_extra_value_with_vat=: (Float) -> Float
+
+            def initialize: (
+              rate_value: Float,
+              rate_value_with_vat: Float,
+              vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+              ?rate_extra_value: Float,
+              ?rate_extra_value_with_vat: Float
+            ) -> void
+
+            def to_hash: -> {
+              rate_value: Float,
+              rate_value_with_vat: Float,
+              vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+              rate_extra_value: Float,
+              rate_extra_value_with_vat: Float
+            }
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type currency = :RUB
+
+        module Currency
+          extend DeliveryFivePostClient::Internal::Type::Enum
+
+          RUB: :RUB
+
+          def self?.values: -> ::Array[DeliveryFivePostClient::Models::API::V1::currency]
+        end
+      end
+    end
+  end
+end

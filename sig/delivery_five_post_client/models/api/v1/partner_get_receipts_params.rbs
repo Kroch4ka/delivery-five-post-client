@@ -1,0 +1,28 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_receipts_params =
+          { order_ids: ::Array[String] }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerGetReceiptsParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_accessor order_ids: ::Array[String]
+
+          def initialize: (
+            order_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            order_ids: ::Array[String],
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

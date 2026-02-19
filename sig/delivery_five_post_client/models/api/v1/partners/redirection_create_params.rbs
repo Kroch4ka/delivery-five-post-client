@@ -1,0 +1,34 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type redirection_create_params =
+            { new_location_id: String, order_id: String }
+            & DeliveryFivePostClient::Internal::Type::request_parameters
+
+          class RedirectionCreateParams < DeliveryFivePostClient::Internal::Type::BaseModel
+            extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+            include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_accessor new_location_id: String
+
+            attr_accessor order_id: String
+
+            def initialize: (
+              new_location_id: String,
+              order_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              new_location_id: String,
+              order_id: String,
+              request_options: DeliveryFivePostClient::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

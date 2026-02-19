@@ -1,0 +1,75 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type order_cost =
+          {
+            assessed_value: Float,
+            payment_currency: DeliveryFivePostClient::Models::API::V1::currency,
+            price: Float,
+            delivery_price: Float,
+            payment_type: DeliveryFivePostClient::Models::API::V1::OrderCost::payment_type,
+            payment_value: Float,
+            prepayment_sum: Float
+          }
+
+        class OrderCost < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor assessed_value: Float
+
+          attr_accessor payment_currency: DeliveryFivePostClient::Models::API::V1::currency
+
+          attr_accessor price: Float
+
+          attr_reader delivery_price: Float?
+
+          def delivery_price=: (Float) -> Float
+
+          attr_reader payment_type: DeliveryFivePostClient::Models::API::V1::OrderCost::payment_type?
+
+          def payment_type=: (
+            DeliveryFivePostClient::Models::API::V1::OrderCost::payment_type
+          ) -> DeliveryFivePostClient::Models::API::V1::OrderCost::payment_type
+
+          attr_reader payment_value: Float?
+
+          def payment_value=: (Float) -> Float
+
+          attr_reader prepayment_sum: Float?
+
+          def prepayment_sum=: (Float) -> Float
+
+          def initialize: (
+            assessed_value: Float,
+            payment_currency: DeliveryFivePostClient::Models::API::V1::currency,
+            price: Float,
+            ?delivery_price: Float,
+            ?payment_type: DeliveryFivePostClient::Models::API::V1::OrderCost::payment_type,
+            ?payment_value: Float,
+            ?prepayment_sum: Float
+          ) -> void
+
+          def to_hash: -> {
+            assessed_value: Float,
+            payment_currency: DeliveryFivePostClient::Models::API::V1::currency,
+            price: Float,
+            delivery_price: Float,
+            payment_type: DeliveryFivePostClient::Models::API::V1::OrderCost::payment_type,
+            payment_value: Float,
+            prepayment_sum: Float
+          }
+
+          type payment_type = :PREPAID | :POSTPAID
+
+          module PaymentType
+            extend DeliveryFivePostClient::Internal::Type::Enum
+
+            PREPAID: :PREPAID
+            POSTPAID: :POSTPAID
+
+            def self?.values: -> ::Array[DeliveryFivePostClient::Models::API::V1::OrderCost::payment_type]
+          end
+        end
+      end
+    end
+  end
+end

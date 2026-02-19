@@ -1,0 +1,96 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          module Orders
+            type cargo_update_params =
+              {
+                order_id: String,
+                height: Float,
+                length: Float,
+                price: Float,
+                product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue],
+                vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+                vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo,
+                weight: Float,
+                width: Float
+              }
+              & DeliveryFivePostClient::Internal::Type::request_parameters
+
+            class CargoUpdateParams < DeliveryFivePostClient::Internal::Type::BaseModel
+              extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+              include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+              attr_accessor order_id: String
+
+              attr_reader height: Float?
+
+              def height=: (Float) -> Float
+
+              attr_reader length: Float?
+
+              def length=: (Float) -> Float
+
+              attr_reader price: Float?
+
+              def price=: (Float) -> Float
+
+              attr_reader product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue]?
+
+              def product_values=: (
+                ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue]
+              ) -> ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue]
+
+              attr_reader vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate?
+
+              def vat=: (
+                DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate
+              ) -> DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate
+
+              attr_reader vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo?
+
+              def vendor=: (
+                DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo
+              ) -> DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo
+
+              attr_reader weight: Float?
+
+              def weight=: (Float) -> Float
+
+              attr_reader width: Float?
+
+              def width=: (Float) -> Float
+
+              def initialize: (
+                order_id: String,
+                ?height: Float,
+                ?length: Float,
+                ?price: Float,
+                ?product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue],
+                ?vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+                ?vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo,
+                ?weight: Float,
+                ?width: Float,
+                ?request_options: DeliveryFivePostClient::request_opts
+              ) -> void
+
+              def to_hash: -> {
+                order_id: String,
+                height: Float,
+                length: Float,
+                price: Float,
+                product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue],
+                vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+                vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo,
+                weight: Float,
+                width: Float,
+                request_options: DeliveryFivePostClient::RequestOptions
+              }
+            end
+          end
+        end
+      end
+    end
+  end
+end

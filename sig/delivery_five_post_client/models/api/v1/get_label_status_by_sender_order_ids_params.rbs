@@ -1,0 +1,28 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type get_label_status_by_sender_order_ids_params =
+          { sender_order_ids: ::Array[String] }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class GetLabelStatusBySenderOrderIDsParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_accessor sender_order_ids: ::Array[String]
+
+          def initialize: (
+            sender_order_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            sender_order_ids: ::Array[String],
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,50 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Partners
+          class Orders
+            class Cargo
+              def create: (
+                String order_id,
+                height: Float,
+                length: Float,
+                price: Float,
+                product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue],
+                sender_cargo_id: String,
+                weight: Float,
+                width: Float,
+                ?barcode: String,
+                ?vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+                ?vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo,
+                ?request_options: DeliveryFivePostClient::request_opts
+              ) -> DeliveryFivePostClient::API::V1::Partners::Orders::CargoCreatedInfo
+
+              def update: (
+                String cargo_id,
+                order_id: String,
+                ?height: Float,
+                ?length: Float,
+                ?price: Float,
+                ?product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue],
+                ?vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+                ?vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo,
+                ?weight: Float,
+                ?width: Float,
+                ?request_options: DeliveryFivePostClient::request_opts
+              ) -> nil
+
+              def delete: (
+                String cargo_id,
+                order_id: String,
+                ?request_options: DeliveryFivePostClient::request_opts
+              ) -> nil
+
+              def initialize: (client: DeliveryFivePostClient::Client) -> void
+            end
+          end
+        end
+      end
+    end
+  end
+end

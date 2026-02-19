@@ -1,0 +1,46 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type warehouse_info =
+            {
+              id: String,
+              address: DeliveryFivePostClient::API::V1::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::Contacts,
+              external_id: String,
+              name: String
+            }
+
+          class WarehouseInfo < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor id: String
+
+            attr_accessor address: DeliveryFivePostClient::API::V1::Address
+
+            attr_accessor contacts: DeliveryFivePostClient::API::V1::Partners::Contacts
+
+            attr_accessor external_id: String
+
+            attr_accessor name: String
+
+            def initialize: (
+              id: String,
+              address: DeliveryFivePostClient::API::V1::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::Contacts,
+              external_id: String,
+              name: String
+            ) -> void
+
+            def to_hash: -> {
+              id: String,
+              address: DeliveryFivePostClient::API::V1::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::Contacts,
+              external_id: String,
+              name: String
+            }
+          end
+        end
+      end
+    end
+  end
+end

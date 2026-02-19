@@ -1,0 +1,16 @@
+module DeliveryFivePostClient
+  module Models
+    type mile_type = :FIRST_MILE | :MIDDLE_MILE | :LAST_MILE | :RETURN_MILE
+
+    module MileType
+      extend DeliveryFivePostClient::Internal::Type::Enum
+
+      FIRST_MILE: :FIRST_MILE
+      MIDDLE_MILE: :MIDDLE_MILE
+      LAST_MILE: :LAST_MILE
+      RETURN_MILE: :RETURN_MILE
+
+      def self?.values: -> ::Array[DeliveryFivePostClient::Models::mile_type]
+    end
+  end
+end

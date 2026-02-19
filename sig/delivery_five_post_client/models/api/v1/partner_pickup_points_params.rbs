@@ -1,0 +1,60 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_pickup_points_params =
+          {
+            active: bool,
+            city: String,
+            mdm_code: String,
+            ready: bool,
+            region: String
+          }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerPickupPointsParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_reader active: bool?
+
+          def active=: (bool) -> bool
+
+          attr_reader city: String?
+
+          def city=: (String) -> String
+
+          attr_reader mdm_code: String?
+
+          def mdm_code=: (String) -> String
+
+          attr_reader ready: bool?
+
+          def ready=: (bool) -> bool
+
+          attr_reader region: String?
+
+          def region=: (String) -> String
+
+          def initialize: (
+            ?active: bool,
+            ?city: String,
+            ?mdm_code: String,
+            ?ready: bool,
+            ?region: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            active: bool,
+            city: String,
+            mdm_code: String,
+            ready: bool,
+            region: String,
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

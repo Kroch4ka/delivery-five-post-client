@@ -1,0 +1,15 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        attr_reader get_label_statuses: DeliveryFivePostClient::Resources::API::V1::GetLabelStatuses
+
+        attr_reader partners: DeliveryFivePostClient::Resources::API::V1::Partners
+
+        attr_reader tariff: DeliveryFivePostClient::Resources::API::V1::Tariff
+
+        def initialize: (client: DeliveryFivePostClient::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,94 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_order_history_mass_response =
+          {
+            orders: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse::Order]
+          }
+
+        class PartnerGetOrderHistoryMassResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor orders: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse::Order]
+
+          def initialize: (
+            orders: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse::Order]
+          ) -> void
+
+          def to_hash: -> {
+            orders: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse::Order]
+          }
+
+          type order =
+            {
+              history: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse::Order::History],
+              order_id: String,
+              sender_order_id: String
+            }
+
+          class Order < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor history: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse::Order::History]
+
+            attr_accessor order_id: String
+
+            attr_accessor sender_order_id: String
+
+            def initialize: (
+              history: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse::Order::History],
+              order_id: String,
+              sender_order_id: String
+            ) -> void
+
+            def to_hash: -> {
+              history: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse::Order::History],
+              order_id: String,
+              sender_order_id: String
+            }
+
+            type history =
+              {
+                change_date: Time,
+                execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+                status: String,
+                error_desc: String,
+                mile_type: DeliveryFivePostClient::Models::mile_type
+              }
+
+            class History < DeliveryFivePostClient::Internal::Type::BaseModel
+              attr_accessor change_date: Time
+
+              attr_accessor execution_status: DeliveryFivePostClient::Models::API::V1::execution_status
+
+              attr_accessor status: String
+
+              attr_reader error_desc: String?
+
+              def error_desc=: (String) -> String
+
+              attr_reader mile_type: DeliveryFivePostClient::Models::mile_type?
+
+              def mile_type=: (
+                DeliveryFivePostClient::Models::mile_type
+              ) -> DeliveryFivePostClient::Models::mile_type
+
+              def initialize: (
+                change_date: Time,
+                execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+                status: String,
+                ?error_desc: String,
+                ?mile_type: DeliveryFivePostClient::Models::mile_type
+              ) -> void
+
+              def to_hash: -> {
+                change_date: Time,
+                execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+                status: String,
+                error_desc: String,
+                mile_type: DeliveryFivePostClient::Models::mile_type
+              }
+            end
+          end
+        end
+      end
+    end
+  end
+end

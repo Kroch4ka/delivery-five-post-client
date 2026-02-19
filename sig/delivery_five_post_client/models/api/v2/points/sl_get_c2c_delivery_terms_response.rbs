@@ -1,0 +1,38 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V2
+        module Points
+          type sl_get_c2c_delivery_terms_response =
+            {
+              max_delivery_days: Integer,
+              min_delivery_days: Integer,
+              logistics_scheme: String
+            }
+
+          class SlGetC2cDeliveryTermsResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor max_delivery_days: Integer
+
+            attr_accessor min_delivery_days: Integer
+
+            attr_reader logistics_scheme: String?
+
+            def logistics_scheme=: (String) -> String
+
+            def initialize: (
+              max_delivery_days: Integer,
+              min_delivery_days: Integer,
+              ?logistics_scheme: String
+            ) -> void
+
+            def to_hash: -> {
+              max_delivery_days: Integer,
+              min_delivery_days: Integer,
+              logistics_scheme: String
+            }
+          end
+        end
+      end
+    end
+  end
+end

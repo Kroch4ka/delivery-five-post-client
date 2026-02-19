@@ -1,0 +1,111 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_receipts_response =
+          {
+            receipts: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt]
+          }
+
+        class PartnerGetReceiptsResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor receipts: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt]
+
+          def initialize: (
+            receipts: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt]
+          ) -> void
+
+          def to_hash: -> {
+            receipts: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt]
+          }
+
+          type receipt =
+            {
+              order_id: String,
+              receipts: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt]
+            }
+
+          class Receipt < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor order_id: String
+
+            attr_accessor receipts: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt]
+
+            def initialize: (
+              order_id: String,
+              receipts: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt]
+            ) -> void
+
+            def to_hash: -> {
+              order_id: String,
+              receipts: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt]
+            }
+
+            type receipt =
+              {
+                fiscal_data: DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::FiscalData,
+                type: DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::type_,
+                url: String
+              }
+
+            class Receipt < DeliveryFivePostClient::Internal::Type::BaseModel
+              attr_accessor fiscal_data: DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::FiscalData
+
+              attr_accessor type: DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::type_
+
+              attr_accessor url: String
+
+              def initialize: (
+                fiscal_data: DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::FiscalData,
+                type: DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::type_,
+                url: String
+              ) -> void
+
+              def to_hash: -> {
+                fiscal_data: DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::FiscalData,
+                type: DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::type_,
+                url: String
+              }
+
+              type fiscal_data =
+                {
+                  fiscal_document_number: String,
+                  fiscal_sign: String,
+                  fiscal_storage_number: String
+                }
+
+              class FiscalData < DeliveryFivePostClient::Internal::Type::BaseModel
+                attr_accessor fiscal_document_number: String
+
+                attr_accessor fiscal_sign: String
+
+                attr_accessor fiscal_storage_number: String
+
+                def initialize: (
+                  fiscal_document_number: String,
+                  fiscal_sign: String,
+                  fiscal_storage_number: String
+                ) -> void
+
+                def to_hash: -> {
+                  fiscal_document_number: String,
+                  fiscal_sign: String,
+                  fiscal_storage_number: String
+                }
+              end
+
+              type type_ = :PAYMENT | :REFUND
+
+              module Type
+                extend DeliveryFivePostClient::Internal::Type::Enum
+
+                PAYMENT: :PAYMENT
+                REFUND: :REFUND
+
+                def self?.values: -> ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse::Receipt::Receipt::type_]
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

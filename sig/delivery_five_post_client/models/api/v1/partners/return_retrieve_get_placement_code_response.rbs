@@ -1,0 +1,20 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type return_retrieve_get_placement_code_response =
+            { placement_code: String }
+
+          class ReturnRetrieveGetPlacementCodeResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor placement_code: String
+
+            def initialize: (placement_code: String) -> void
+
+            def to_hash: -> { placement_code: String }
+          end
+        end
+      end
+    end
+  end
+end

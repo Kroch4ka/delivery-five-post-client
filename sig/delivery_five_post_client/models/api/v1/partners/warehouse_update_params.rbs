@@ -1,0 +1,129 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type warehouse_update_params =
+            {
+              address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts,
+              name: String
+            }
+            & DeliveryFivePostClient::Internal::Type::request_parameters
+
+          class WarehouseUpdateParams < DeliveryFivePostClient::Internal::Type::BaseModel
+            extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+            include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_reader address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address?
+
+            def address=: (
+              DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address
+            ) -> DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address
+
+            attr_reader contacts: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts?
+
+            def contacts=: (
+              DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts
+            ) -> DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            def initialize: (
+              ?address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address,
+              ?contacts: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts,
+              ?name: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address,
+              contacts: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts,
+              name: String,
+              request_options: DeliveryFivePostClient::RequestOptions
+            }
+
+            type address =
+              {
+                city: String,
+                country: String,
+                flat: String,
+                house: String,
+                region: String,
+                street: String,
+                zip_code: String
+              }
+
+            class Address < DeliveryFivePostClient::Internal::Type::BaseModel
+              attr_reader city: String?
+
+              def city=: (String) -> String
+
+              attr_reader country: String?
+
+              def country=: (String) -> String
+
+              attr_reader flat: String?
+
+              def flat=: (String) -> String
+
+              attr_reader house: String?
+
+              def house=: (String) -> String
+
+              attr_reader region: String?
+
+              def region=: (String) -> String
+
+              attr_reader street: String?
+
+              def street=: (String) -> String
+
+              attr_reader zip_code: String?
+
+              def zip_code=: (String) -> String
+
+              def initialize: (
+                ?city: String,
+                ?country: String,
+                ?flat: String,
+                ?house: String,
+                ?region: String,
+                ?street: String,
+                ?zip_code: String
+              ) -> void
+
+              def to_hash: -> {
+                city: String,
+                country: String,
+                flat: String,
+                house: String,
+                region: String,
+                street: String,
+                zip_code: String
+              }
+            end
+
+            type contacts = { email: String, phone: String }
+
+            class Contacts < DeliveryFivePostClient::Internal::Type::BaseModel
+              attr_reader email: String?
+
+              def email=: (String) -> String
+
+              attr_reader phone: String?
+
+              def phone=: (String) -> String
+
+              def initialize: (?email: String, ?phone: String) -> void
+
+              def to_hash: -> { email: String, phone: String }
+            end
+          end
+        end
+      end
+    end
+  end
+end

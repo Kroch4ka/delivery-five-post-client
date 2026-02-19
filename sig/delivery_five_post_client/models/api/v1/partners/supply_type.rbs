@@ -1,0 +1,20 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type supply_type = :PLANNED | :UNPLANNED
+
+          module SupplyType
+            extend DeliveryFivePostClient::Internal::Type::Enum
+
+            PLANNED: :PLANNED
+            UNPLANNED: :UNPLANNED
+
+            def self?.values: -> ::Array[DeliveryFivePostClient::Models::API::V1::Partners::supply_type]
+          end
+        end
+      end
+    end
+  end
+end

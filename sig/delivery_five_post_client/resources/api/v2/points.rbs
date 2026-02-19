@@ -1,0 +1,26 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V2
+        class Points
+          attr_reader sl: DeliveryFivePostClient::Resources::API::V2::Points::Sl
+
+          def get_c2c_pickup_points: (
+            ?city: String,
+            ?from_location_id: String,
+            ?region: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V2::point_get_c2c_pickup_points_response
+
+          def get_c2c_placement_points: (
+            ?city: String,
+            ?region: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V2::point_get_c2c_placement_points_response
+
+          def initialize: (client: DeliveryFivePostClient::Client) -> void
+        end
+      end
+    end
+  end
+end

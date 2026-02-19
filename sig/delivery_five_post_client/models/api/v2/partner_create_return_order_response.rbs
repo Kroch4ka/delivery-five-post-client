@@ -1,0 +1,46 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V2
+        type partner_create_return_order_response =
+          {
+            cargoes: ::Array[DeliveryFivePostClient::Models::API::V2::PartnerCreateReturnOrderResponse::Cargo],
+            order_id: String,
+            sender_order_id: String
+          }
+
+        class PartnerCreateReturnOrderResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor cargoes: ::Array[DeliveryFivePostClient::Models::API::V2::PartnerCreateReturnOrderResponse::Cargo]
+
+          attr_accessor order_id: String
+
+          attr_accessor sender_order_id: String
+
+          def initialize: (
+            cargoes: ::Array[DeliveryFivePostClient::Models::API::V2::PartnerCreateReturnOrderResponse::Cargo],
+            order_id: String,
+            sender_order_id: String
+          ) -> void
+
+          def to_hash: -> {
+            cargoes: ::Array[DeliveryFivePostClient::Models::API::V2::PartnerCreateReturnOrderResponse::Cargo],
+            order_id: String,
+            sender_order_id: String
+          }
+
+          type cargo = { barcode: String, cargo_id: String }
+
+          class Cargo < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor barcode: String
+
+            attr_accessor cargo_id: String
+
+            def initialize: (barcode: String, cargo_id: String) -> void
+
+            def to_hash: -> { barcode: String, cargo_id: String }
+          end
+        end
+      end
+    end
+  end
+end

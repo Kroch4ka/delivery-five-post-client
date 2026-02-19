@@ -1,0 +1,24 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_pickup_points_response =
+          {
+            pickup_points: ::Array[DeliveryFivePostClient::API::V2::PickupPoint]
+          }
+
+        class PartnerPickupPointsResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor pickup_points: ::Array[DeliveryFivePostClient::API::V2::PickupPoint]
+
+          def initialize: (
+            pickup_points: ::Array[DeliveryFivePostClient::API::V2::PickupPoint]
+          ) -> void
+
+          def to_hash: -> {
+            pickup_points: ::Array[DeliveryFivePostClient::API::V2::PickupPoint]
+          }
+        end
+      end
+    end
+  end
+end

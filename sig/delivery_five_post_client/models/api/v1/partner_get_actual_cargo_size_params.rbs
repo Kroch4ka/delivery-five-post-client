@@ -1,0 +1,28 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_actual_cargo_size_params =
+          { cargo_id: String }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerGetActualCargoSizeParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_accessor cargo_id: String
+
+          def initialize: (
+            cargo_id: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            cargo_id: String,
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

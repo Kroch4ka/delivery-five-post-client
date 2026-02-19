@@ -1,0 +1,21 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type contacts = { email: String, phone: String }
+
+          class Contacts < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor email: String
+
+            attr_accessor phone: String
+
+            def initialize: (email: String, phone: String) -> void
+
+            def to_hash: -> { email: String, phone: String }
+          end
+        end
+      end
+    end
+  end
+end

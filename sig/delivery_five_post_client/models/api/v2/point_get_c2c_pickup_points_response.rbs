@@ -1,0 +1,12 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V2
+        type point_get_c2c_pickup_points_response =
+          ::Array[DeliveryFivePostClient::API::V2::PickupPoint]
+
+        PointGetC2cPickupPointsResponse: DeliveryFivePostClient::Internal::Type::Converter
+      end
+    end
+  end
+end

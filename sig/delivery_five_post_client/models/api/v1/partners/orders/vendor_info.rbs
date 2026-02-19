@@ -1,0 +1,23 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          module Orders
+            type vendor_info = { inn: String, name: String }
+
+            class VendorInfo < DeliveryFivePostClient::Internal::Type::BaseModel
+              attr_accessor inn: String
+
+              attr_accessor name: String
+
+              def initialize: (inn: String, name: String) -> void
+
+              def to_hash: -> { inn: String, name: String }
+            end
+          end
+        end
+      end
+    end
+  end
+end

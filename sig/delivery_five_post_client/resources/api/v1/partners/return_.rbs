@@ -1,0 +1,23 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Partners
+          class Return
+            def retrieve_get_placement_code: (
+              order_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::Models::API::V1::Partners::ReturnRetrieveGetPlacementCodeResponse
+
+            def retrieve_get_return_barcode: (
+              order_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::Models::API::V1::Partners::ReturnRetrieveGetReturnBarcodeResponse
+
+            def initialize: (client: DeliveryFivePostClient::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,62 @@
+module DeliveryFivePostClient
+  module Models
+    type webhook_create_cargo_status_params =
+      {
+        cargo_id: String,
+        change_date: Time,
+        order_id: String,
+        sender_cargo_id: String,
+        status: String,
+        error_desc: String,
+        mile_type: DeliveryFivePostClient::Models::mile_type
+      }
+      & DeliveryFivePostClient::Internal::Type::request_parameters
+
+    class WebhookCreateCargoStatusParams < DeliveryFivePostClient::Internal::Type::BaseModel
+      extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+      include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+      attr_accessor cargo_id: String
+
+      attr_accessor change_date: Time
+
+      attr_accessor order_id: String
+
+      attr_accessor sender_cargo_id: String
+
+      attr_accessor status: String
+
+      attr_reader error_desc: String?
+
+      def error_desc=: (String) -> String
+
+      attr_reader mile_type: DeliveryFivePostClient::Models::mile_type?
+
+      def mile_type=: (
+        DeliveryFivePostClient::Models::mile_type
+      ) -> DeliveryFivePostClient::Models::mile_type
+
+      def initialize: (
+        cargo_id: String,
+        change_date: Time,
+        order_id: String,
+        sender_cargo_id: String,
+        status: String,
+        ?error_desc: String,
+        ?mile_type: DeliveryFivePostClient::Models::mile_type,
+        ?request_options: DeliveryFivePostClient::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        cargo_id: String,
+        change_date: Time,
+        order_id: String,
+        sender_cargo_id: String,
+        status: String,
+        error_desc: String,
+        mile_type: DeliveryFivePostClient::Models::mile_type,
+        request_options: DeliveryFivePostClient::RequestOptions
+      }
+    end
+  end
+end

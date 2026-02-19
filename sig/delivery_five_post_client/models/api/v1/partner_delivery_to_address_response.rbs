@@ -1,0 +1,41 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_delivery_to_address_response =
+          {
+            currency: DeliveryFivePostClient::Models::API::V1::currency,
+            delivery_days: Integer,
+            total_cost: Float,
+            zone_id: String
+          }
+
+        class PartnerDeliveryToAddressResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor currency: DeliveryFivePostClient::Models::API::V1::currency
+
+          attr_accessor delivery_days: Integer
+
+          attr_accessor total_cost: Float
+
+          attr_reader zone_id: String?
+
+          def zone_id=: (String) -> String
+
+          def initialize: (
+            currency: DeliveryFivePostClient::Models::API::V1::currency,
+            delivery_days: Integer,
+            total_cost: Float,
+            ?zone_id: String
+          ) -> void
+
+          def to_hash: -> {
+            currency: DeliveryFivePostClient::Models::API::V1::currency,
+            delivery_days: Integer,
+            total_cost: Float,
+            zone_id: String
+          }
+        end
+      end
+    end
+  end
+end

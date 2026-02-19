@@ -1,0 +1,31 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type partner_supply_retrieve_partner_supply_response =
+            {
+              supplies: ::Array[DeliveryFivePostClient::API::V1::Partners::SupplyInfo],
+              total_count: Integer
+            }
+
+          class PartnerSupplyRetrievePartnerSupplyResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor supplies: ::Array[DeliveryFivePostClient::API::V1::Partners::SupplyInfo]
+
+            attr_accessor total_count: Integer
+
+            def initialize: (
+              supplies: ::Array[DeliveryFivePostClient::API::V1::Partners::SupplyInfo],
+              total_count: Integer
+            ) -> void
+
+            def to_hash: -> {
+              supplies: ::Array[DeliveryFivePostClient::API::V1::Partners::SupplyInfo],
+              total_count: Integer
+            }
+          end
+        end
+      end
+    end
+  end
+end

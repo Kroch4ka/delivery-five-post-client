@@ -1,0 +1,23 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_create_order_params =
+          {  } & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerCreateOrderParams < DeliveryFivePostClient::Models::API::V1::OrderCreate
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          def initialize: (
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

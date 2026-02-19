@@ -1,0 +1,18 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Partners
+          class Jwt
+            def generate: (
+              apikey: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::Models::API::V1::Partners::JwtGenerateResponse
+
+            def initialize: (client: DeliveryFivePostClient::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

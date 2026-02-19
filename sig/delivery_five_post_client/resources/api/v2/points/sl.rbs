@@ -1,0 +1,19 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V2
+        class Points
+          class Sl
+            def get_c2c_delivery_terms: (
+              from_location_id: String,
+              to_location_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::Models::API::V2::Points::SlGetC2cDeliveryTermsResponse
+
+            def initialize: (client: DeliveryFivePostClient::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

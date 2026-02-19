@@ -1,0 +1,21 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type task_status = :PROCESSING | :COMPLETED | :ERROR
+
+          module TaskStatus
+            extend DeliveryFivePostClient::Internal::Type::Enum
+
+            PROCESSING: :PROCESSING
+            COMPLETED: :COMPLETED
+            ERROR: :ERROR
+
+            def self?.values: -> ::Array[DeliveryFivePostClient::Models::API::V1::Partners::task_status]
+          end
+        end
+      end
+    end
+  end
+end

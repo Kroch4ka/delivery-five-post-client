@@ -1,0 +1,51 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type order_create_response =
+          {
+            cargoes: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::CargoCreatedInfo],
+            execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+            order_id: String,
+            sender_order_id: String,
+            status: String,
+            is_duplicate: bool
+          }
+
+        class OrderCreateResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor cargoes: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::CargoCreatedInfo]
+
+          attr_accessor execution_status: DeliveryFivePostClient::Models::API::V1::execution_status
+
+          attr_accessor order_id: String
+
+          attr_accessor sender_order_id: String
+
+          attr_accessor status: String
+
+          attr_reader is_duplicate: bool?
+
+          def is_duplicate=: (bool) -> bool
+
+          def initialize: (
+            cargoes: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::CargoCreatedInfo],
+            execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+            order_id: String,
+            sender_order_id: String,
+            status: String,
+            ?is_duplicate: bool
+          ) -> void
+
+          def to_hash: -> {
+            cargoes: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::CargoCreatedInfo],
+            execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+            order_id: String,
+            sender_order_id: String,
+            status: String,
+            is_duplicate: bool
+          }
+        end
+      end
+    end
+  end
+end

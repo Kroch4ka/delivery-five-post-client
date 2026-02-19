@@ -1,0 +1,10 @@
+module DeliveryFivePostClient
+  module Internal
+    extend DeliveryFivePostClient::Internal::Util::SorbetRuntimeSupport
+
+    type file_input =
+      Pathname | StringIO | IO | String | DeliveryFivePostClient::FilePart
+
+    OMIT: Object
+  end
+end

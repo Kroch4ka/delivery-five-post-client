@@ -1,0 +1,20 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_retrieve_response =
+          { expiration_date: Date, order_id: String }
+
+        class PartnerRetrieveResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor expiration_date: Date
+
+          attr_accessor order_id: String
+
+          def initialize: (expiration_date: Date, order_id: String) -> void
+
+          def to_hash: -> { expiration_date: Date, order_id: String }
+        end
+      end
+    end
+  end
+end

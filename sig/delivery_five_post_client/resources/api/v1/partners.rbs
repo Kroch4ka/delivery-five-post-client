@@ -1,0 +1,116 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Partners
+          attr_reader extend_storage_days: DeliveryFivePostClient::Resources::API::V1::Partners::ExtendStorageDays
+
+          attr_reader jwt: DeliveryFivePostClient::Resources::API::V1::Partners::Jwt
+
+          attr_reader orders: DeliveryFivePostClient::Resources::API::V1::Partners::Orders
+
+          attr_reader partner_supply: DeliveryFivePostClient::Resources::API::V1::Partners::PartnerSupply
+
+          attr_reader redirection: DeliveryFivePostClient::Resources::API::V1::Partners::Redirection
+
+          attr_reader return_: DeliveryFivePostClient::Resources::API::V1::Partners::Return
+
+          attr_reader tasks: DeliveryFivePostClient::Resources::API::V1::Partners::Tasks
+
+          attr_reader warehouse: DeliveryFivePostClient::Resources::API::V1::Partners::Warehouse
+
+          def retrieve: (
+            String order_id,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerRetrieveResponse
+
+          def create_order: (
+            cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+            client: DeliveryFivePostClient::API::V1::ClientInfo,
+            cost: DeliveryFivePostClient::API::V1::OrderCost,
+            receiver: DeliveryFivePostClient::API::V1::ReceiverLocation,
+            sender_order_id: String,
+            warehouse: DeliveryFivePostClient::API::V1::OrderCreate::Warehouse,
+            ?brand_name: String,
+            ?client_order_id: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::API::V1::OrderCreateResponse
+
+          def delivery_params: (
+            ?city: String,
+            ?region: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerDeliveryParamsResponse
+
+          def delivery_to_address: (
+            delivery_address: DeliveryFivePostClient::API::V1::Address,
+            dimensions: DeliveryFivePostClient::API::V1::PartnerDeliveryToAddressParams::Dimensions,
+            sender_location_id: String,
+            weight: Float,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerDeliveryToAddressResponse
+
+          def get_actual_cargo_size: (
+            cargo_id: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerGetActualCargoSizeResponse
+
+          def get_cargo_status: (
+            ?cargo_ids: ::Array[String],
+            ?sender_cargo_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerGetCargoStatusResponse
+
+          def get_order_history_mass: (
+            ?order_ids: ::Array[String],
+            ?sender_order_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerGetOrderHistoryMassResponse
+
+          def get_order_status: (
+            ?order_ids: ::Array[String],
+            ?sender_order_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerGetOrderStatusResponse
+
+          def get_receipts: (
+            order_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerGetReceiptsResponse
+
+          def get_receiver_locations: (
+            order_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerGetReceiverLocationsResponse
+
+          def get_security_code: (
+            order_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerGetSecurityCodeResponse
+
+          def order_labels: (
+            order_ids: ::Array[String],
+            ?format_: DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsParams::format_,
+            ?unified: bool,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsResponse
+
+          def pickup_points: (
+            ?active: bool,
+            ?city: String,
+            ?mdm_code: String,
+            ?ready: bool,
+            ?region: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerPickupPointsResponse
+
+          def retrieve_warehouse_all: (
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerRetrieveWarehouseAllResponse
+
+          def initialize: (client: DeliveryFivePostClient::Client) -> void
+        end
+      end
+    end
+  end
+end

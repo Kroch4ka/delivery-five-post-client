@@ -1,0 +1,36 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_cargo_status_params =
+          { cargo_ids: ::Array[String], sender_cargo_ids: ::Array[String] }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerGetCargoStatusParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_reader cargo_ids: ::Array[String]?
+
+          def cargo_ids=: (::Array[String]) -> ::Array[String]
+
+          attr_reader sender_cargo_ids: ::Array[String]?
+
+          def sender_cargo_ids=: (::Array[String]) -> ::Array[String]
+
+          def initialize: (
+            ?cargo_ids: ::Array[String],
+            ?sender_cargo_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            cargo_ids: ::Array[String],
+            sender_cargo_ids: ::Array[String],
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

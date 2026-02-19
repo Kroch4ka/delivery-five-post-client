@@ -1,0 +1,57 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_order_labels_params =
+          {
+            order_ids: ::Array[String],
+            format_: DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsParams::format_,
+            unified: bool
+          }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerOrderLabelsParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_accessor order_ids: ::Array[String]
+
+          attr_reader format_: DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsParams::format_?
+
+          def format_=: (
+            DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsParams::format_
+          ) -> DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsParams::format_
+
+          attr_reader unified: bool?
+
+          def unified=: (bool) -> bool
+
+          def initialize: (
+            order_ids: ::Array[String],
+            ?format_: DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsParams::format_,
+            ?unified: bool,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            order_ids: ::Array[String],
+            format_: DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsParams::format_,
+            unified: bool,
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+
+          type format_ = :PDF | :ZPL
+
+          module Format
+            extend DeliveryFivePostClient::Internal::Type::Enum
+
+            PDF: :PDF
+            ZPL: :ZPL
+
+            def self?.values: -> ::Array[DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsParams::format_]
+          end
+        end
+      end
+    end
+  end
+end

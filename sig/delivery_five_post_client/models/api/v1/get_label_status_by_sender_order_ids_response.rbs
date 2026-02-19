@@ -1,0 +1,63 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type get_label_status_by_sender_order_ids_response =
+          {
+            label_statuses: ::Array[DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus]
+          }
+
+        class GetLabelStatusBySenderOrderIDsResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor label_statuses: ::Array[DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus]
+
+          def initialize: (
+            label_statuses: ::Array[DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus]
+          ) -> void
+
+          def to_hash: -> {
+            label_statuses: ::Array[DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus]
+          }
+
+          type label_status =
+            {
+              order_id: String,
+              sender_order_id: String,
+              status: DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus::status
+            }
+
+          class LabelStatus < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor order_id: String
+
+            attr_accessor sender_order_id: String
+
+            attr_accessor status: DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus::status
+
+            def initialize: (
+              order_id: String,
+              sender_order_id: String,
+              status: DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus::status
+            ) -> void
+
+            def to_hash: -> {
+              order_id: String,
+              sender_order_id: String,
+              status: DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus::status
+            }
+
+            type status = :NEW | :READY | :ERROR
+
+            module Status
+              extend DeliveryFivePostClient::Internal::Type::Enum
+
+              NEW: :NEW
+              READY: :READY
+              ERROR: :ERROR
+
+              def self?.values: -> ::Array[DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse::LabelStatus::status]
+            end
+          end
+        end
+      end
+    end
+  end
+end

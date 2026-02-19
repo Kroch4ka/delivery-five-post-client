@@ -1,0 +1,20 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type extend_storage_day_extend_storage_days_response =
+            { task_id: String }
+
+          class ExtendStorageDayExtendStorageDaysResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor task_id: String
+
+            def initialize: (task_id: String) -> void
+
+            def to_hash: -> { task_id: String }
+          end
+        end
+      end
+    end
+  end
+end

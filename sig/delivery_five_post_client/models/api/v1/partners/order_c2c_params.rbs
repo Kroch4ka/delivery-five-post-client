@@ -1,0 +1,69 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type order_c2c_params =
+            {
+              cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+              cost: DeliveryFivePostClient::API::V1::OrderCost,
+              receiver: DeliveryFivePostClient::API::V1::ClientInfo,
+              receiver_location: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender: DeliveryFivePostClient::API::V1::ClientInfo,
+              sender_location: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender_order_id: String,
+              client_order_id: String
+            }
+            & DeliveryFivePostClient::Internal::Type::request_parameters
+
+          class OrderC2cParams < DeliveryFivePostClient::Internal::Type::BaseModel
+            extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+            include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_accessor cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo]
+
+            attr_accessor cost: DeliveryFivePostClient::API::V1::OrderCost
+
+            attr_accessor receiver: DeliveryFivePostClient::API::V1::ClientInfo
+
+            attr_accessor receiver_location: DeliveryFivePostClient::API::V1::ReceiverLocation
+
+            attr_accessor sender: DeliveryFivePostClient::API::V1::ClientInfo
+
+            attr_accessor sender_location: DeliveryFivePostClient::API::V1::ReceiverLocation
+
+            attr_accessor sender_order_id: String
+
+            attr_reader client_order_id: String?
+
+            def client_order_id=: (String) -> String
+
+            def initialize: (
+              cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+              cost: DeliveryFivePostClient::API::V1::OrderCost,
+              receiver: DeliveryFivePostClient::API::V1::ClientInfo,
+              receiver_location: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender: DeliveryFivePostClient::API::V1::ClientInfo,
+              sender_location: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender_order_id: String,
+              ?client_order_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+              cost: DeliveryFivePostClient::API::V1::OrderCost,
+              receiver: DeliveryFivePostClient::API::V1::ClientInfo,
+              receiver_location: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender: DeliveryFivePostClient::API::V1::ClientInfo,
+              sender_location: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender_order_id: String,
+              client_order_id: String,
+              request_options: DeliveryFivePostClient::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

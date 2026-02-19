@@ -1,0 +1,44 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_actual_cargo_size_response =
+          {
+            actual_height: Float,
+            actual_length: Float,
+            actual_weight: Float,
+            actual_width: Float,
+            cargo_id: String
+          }
+
+        class PartnerGetActualCargoSizeResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor actual_height: Float
+
+          attr_accessor actual_length: Float
+
+          attr_accessor actual_weight: Float
+
+          attr_accessor actual_width: Float
+
+          attr_accessor cargo_id: String
+
+          def initialize: (
+            actual_height: Float,
+            actual_length: Float,
+            actual_weight: Float,
+            actual_width: Float,
+            cargo_id: String
+          ) -> void
+
+          def to_hash: -> {
+            actual_height: Float,
+            actual_length: Float,
+            actual_weight: Float,
+            actual_width: Float,
+            cargo_id: String
+          }
+        end
+      end
+    end
+  end
+end

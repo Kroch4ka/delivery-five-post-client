@@ -1,0 +1,19 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V2
+        class Partners
+          def create_return_order: (
+            base_order: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::BaseOrder,
+            cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+            return_location_id: String,
+            warehouse: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::Warehouse,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V2::PartnerCreateReturnOrderResponse
+
+          def initialize: (client: DeliveryFivePostClient::Client) -> void
+        end
+      end
+    end
+  end
+end

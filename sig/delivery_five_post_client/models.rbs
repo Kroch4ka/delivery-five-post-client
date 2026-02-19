@@ -1,0 +1,9 @@
+module DeliveryFivePostClient
+  module API = DeliveryFivePostClient::Models::API
+
+  module MileType = DeliveryFivePostClient::Models::MileType
+
+  class WebhookCreateCargoStatusParams = DeliveryFivePostClient::Models::WebhookCreateCargoStatusParams
+
+  class WebhookCreateOrderStatusParams = DeliveryFivePostClient::Models::WebhookCreateOrderStatusParams
+end

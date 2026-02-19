@@ -1,0 +1,29 @@
+module DeliveryFivePostClient
+  module Resources
+    class Webhooks
+      def create_cargo_status: (
+        cargo_id: String,
+        change_date: Time,
+        order_id: String,
+        sender_cargo_id: String,
+        status: String,
+        ?error_desc: String,
+        ?mile_type: DeliveryFivePostClient::Models::mile_type,
+        ?request_options: DeliveryFivePostClient::request_opts
+      ) -> nil
+
+      def create_order_status: (
+        change_date: Time,
+        execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+        order_id: String,
+        sender_order_id: String,
+        status: String,
+        ?error_desc: String,
+        ?mile_type: DeliveryFivePostClient::Models::mile_type,
+        ?request_options: DeliveryFivePostClient::request_opts
+      ) -> nil
+
+      def initialize: (client: DeliveryFivePostClient::Client) -> void
+    end
+  end
+end

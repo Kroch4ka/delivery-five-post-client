@@ -1,0 +1,36 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_delivery_params_params =
+          { city: String, region: String }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerDeliveryParamsParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_reader city: String?
+
+          def city=: (String) -> String
+
+          attr_reader region: String?
+
+          def region=: (String) -> String
+
+          def initialize: (
+            ?city: String,
+            ?region: String,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            city: String,
+            region: String,
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

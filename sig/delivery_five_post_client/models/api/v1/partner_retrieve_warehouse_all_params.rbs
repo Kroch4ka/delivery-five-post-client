@@ -1,0 +1,23 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_retrieve_warehouse_all_params =
+          {  } & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerRetrieveWarehouseAllParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          def initialize: (
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

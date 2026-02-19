@@ -1,0 +1,80 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          module Orders
+            type product_value =
+              {
+                currency: DeliveryFivePostClient::Models::API::V1::currency,
+                name: String,
+                price: Float,
+                quantity: Integer,
+                barcode: String,
+                uin_code: String,
+                upi_code: String,
+                vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+                vendor_code: String
+              }
+
+            class ProductValue < DeliveryFivePostClient::Internal::Type::BaseModel
+              attr_accessor currency: DeliveryFivePostClient::Models::API::V1::currency
+
+              attr_accessor name: String
+
+              attr_accessor price: Float
+
+              attr_accessor quantity: Integer
+
+              attr_reader barcode: String?
+
+              def barcode=: (String) -> String
+
+              attr_reader uin_code: String?
+
+              def uin_code=: (String) -> String
+
+              attr_reader upi_code: String?
+
+              def upi_code=: (String) -> String
+
+              attr_reader vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate?
+
+              def vat=: (
+                DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate
+              ) -> DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate
+
+              attr_reader vendor_code: String?
+
+              def vendor_code=: (String) -> String
+
+              def initialize: (
+                currency: DeliveryFivePostClient::Models::API::V1::currency,
+                name: String,
+                price: Float,
+                quantity: Integer,
+                ?barcode: String,
+                ?uin_code: String,
+                ?upi_code: String,
+                ?vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+                ?vendor_code: String
+              ) -> void
+
+              def to_hash: -> {
+                currency: DeliveryFivePostClient::Models::API::V1::currency,
+                name: String,
+                price: Float,
+                quantity: Integer,
+                barcode: String,
+                uin_code: String,
+                upi_code: String,
+                vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+                vendor_code: String
+              }
+            end
+          end
+        end
+      end
+    end
+  end
+end

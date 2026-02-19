@@ -1,0 +1,16 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class GetLabelStatuses
+          def by_sender_order_ids: (
+            sender_order_ids: ::Array[String],
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> DeliveryFivePostClient::Models::API::V1::GetLabelStatusBySenderOrderIDsResponse
+
+          def initialize: (client: DeliveryFivePostClient::Client) -> void
+        end
+      end
+    end
+  end
+end

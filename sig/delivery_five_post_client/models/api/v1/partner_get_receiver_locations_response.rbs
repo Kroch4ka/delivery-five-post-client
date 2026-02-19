@@ -1,0 +1,56 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_receiver_locations_response =
+          {
+            redirections: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiverLocationsResponse::Redirection]
+          }
+
+        class PartnerGetReceiverLocationsResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor redirections: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiverLocationsResponse::Redirection]
+
+          def initialize: (
+            redirections: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiverLocationsResponse::Redirection]
+          ) -> void
+
+          def to_hash: -> {
+            redirections: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetReceiverLocationsResponse::Redirection]
+          }
+
+          type redirection =
+            {
+              from_location_id: String,
+              order_id: String,
+              redirection_date: Time,
+              to_location_id: String
+            }
+
+          class Redirection < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor from_location_id: String
+
+            attr_accessor order_id: String
+
+            attr_accessor redirection_date: Time
+
+            attr_accessor to_location_id: String
+
+            def initialize: (
+              from_location_id: String,
+              order_id: String,
+              redirection_date: Time,
+              to_location_id: String
+            ) -> void
+
+            def to_hash: -> {
+              from_location_id: String,
+              order_id: String,
+              redirection_date: Time,
+              to_location_id: String
+            }
+          end
+        end
+      end
+    end
+  end
+end

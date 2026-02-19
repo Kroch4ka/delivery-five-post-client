@@ -1,0 +1,36 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_security_code_response =
+          {
+            security_codes: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetSecurityCodeResponse::SecurityCode]
+          }
+
+        class PartnerGetSecurityCodeResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor security_codes: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetSecurityCodeResponse::SecurityCode]
+
+          def initialize: (
+            security_codes: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetSecurityCodeResponse::SecurityCode]
+          ) -> void
+
+          def to_hash: -> {
+            security_codes: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetSecurityCodeResponse::SecurityCode]
+          }
+
+          type security_code = { order_id: String, security_code: String }
+
+          class SecurityCode < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor order_id: String
+
+            attr_accessor security_code: String
+
+            def initialize: (order_id: String, security_code: String) -> void
+
+            def to_hash: -> { order_id: String, security_code: String }
+          end
+        end
+      end
+    end
+  end
+end

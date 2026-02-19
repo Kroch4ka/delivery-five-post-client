@@ -1,0 +1,62 @@
+module DeliveryFivePostClient
+  module Models
+    type webhook_create_order_status_params =
+      {
+        change_date: Time,
+        execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+        order_id: String,
+        sender_order_id: String,
+        status: String,
+        error_desc: String,
+        mile_type: DeliveryFivePostClient::Models::mile_type
+      }
+      & DeliveryFivePostClient::Internal::Type::request_parameters
+
+    class WebhookCreateOrderStatusParams < DeliveryFivePostClient::Internal::Type::BaseModel
+      extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+      include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+      attr_accessor change_date: Time
+
+      attr_accessor execution_status: DeliveryFivePostClient::Models::API::V1::execution_status
+
+      attr_accessor order_id: String
+
+      attr_accessor sender_order_id: String
+
+      attr_accessor status: String
+
+      attr_reader error_desc: String?
+
+      def error_desc=: (String) -> String
+
+      attr_reader mile_type: DeliveryFivePostClient::Models::mile_type?
+
+      def mile_type=: (
+        DeliveryFivePostClient::Models::mile_type
+      ) -> DeliveryFivePostClient::Models::mile_type
+
+      def initialize: (
+        change_date: Time,
+        execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+        order_id: String,
+        sender_order_id: String,
+        status: String,
+        ?error_desc: String,
+        ?mile_type: DeliveryFivePostClient::Models::mile_type,
+        ?request_options: DeliveryFivePostClient::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        change_date: Time,
+        execution_status: DeliveryFivePostClient::Models::API::V1::execution_status,
+        order_id: String,
+        sender_order_id: String,
+        status: String,
+        error_desc: String,
+        mile_type: DeliveryFivePostClient::Models::mile_type,
+        request_options: DeliveryFivePostClient::RequestOptions
+      }
+    end
+  end
+end

@@ -1,0 +1,30 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V3
+        class Partners
+          class Orders
+            def cancel_order: (
+              String order_id,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> nil
+
+            def create_order: (
+              cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+              client: DeliveryFivePostClient::API::V1::ClientInfo,
+              cost: DeliveryFivePostClient::API::V1::OrderCost,
+              receiver: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender_order_id: String,
+              warehouse: DeliveryFivePostClient::API::V1::OrderCreate::Warehouse,
+              ?brand_name: String,
+              ?client_order_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::API::V1::OrderCreateResponse
+
+            def initialize: (client: DeliveryFivePostClient::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

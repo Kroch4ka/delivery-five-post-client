@@ -1,0 +1,72 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type order_update_client_info_params =
+            {
+              client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client
+            }
+            & DeliveryFivePostClient::Internal::Type::request_parameters
+
+          class OrderUpdateClientInfoParams < DeliveryFivePostClient::Internal::Type::BaseModel
+            extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+            include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_accessor client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client
+
+            def initialize: (
+              client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client,
+              request_options: DeliveryFivePostClient::RequestOptions
+            }
+
+            type client =
+              {
+                alternative_phone: String,
+                email: String,
+                name: String,
+                phone: String
+              }
+
+            class Client < DeliveryFivePostClient::Internal::Type::BaseModel
+              attr_reader alternative_phone: String?
+
+              def alternative_phone=: (String) -> String
+
+              attr_reader email: String?
+
+              def email=: (String) -> String
+
+              attr_reader name: String?
+
+              def name=: (String) -> String
+
+              attr_reader phone: String?
+
+              def phone=: (String) -> String
+
+              def initialize: (
+                ?alternative_phone: String,
+                ?email: String,
+                ?name: String,
+                ?phone: String
+              ) -> void
+
+              def to_hash: -> {
+                alternative_phone: String,
+                email: String,
+                name: String,
+                phone: String
+              }
+            end
+          end
+        end
+      end
+    end
+  end
+end

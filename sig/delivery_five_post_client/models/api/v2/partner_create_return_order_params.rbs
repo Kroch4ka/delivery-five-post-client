@@ -1,0 +1,74 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V2
+        type partner_create_return_order_params =
+          {
+            base_order: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::BaseOrder,
+            cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+            return_location_id: String,
+            warehouse: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::Warehouse
+          }
+          & DeliveryFivePostClient::Internal::Type::request_parameters
+
+        class PartnerCreateReturnOrderParams < DeliveryFivePostClient::Internal::Type::BaseModel
+          extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
+          include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+          attr_accessor base_order: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::BaseOrder
+
+          attr_accessor cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo]
+
+          attr_accessor return_location_id: String
+
+          attr_accessor warehouse: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::Warehouse
+
+          def initialize: (
+            base_order: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::BaseOrder,
+            cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+            return_location_id: String,
+            warehouse: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::Warehouse,
+            ?request_options: DeliveryFivePostClient::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            base_order: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::BaseOrder,
+            cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+            return_location_id: String,
+            warehouse: DeliveryFivePostClient::API::V2::PartnerCreateReturnOrderParams::Warehouse,
+            request_options: DeliveryFivePostClient::RequestOptions
+          }
+
+          type base_order = { order_id: String, sender_order_id: String }
+
+          class BaseOrder < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_reader order_id: String?
+
+            def order_id=: (String) -> String
+
+            attr_reader sender_order_id: String?
+
+            def sender_order_id=: (String) -> String
+
+            def initialize: (
+              ?order_id: String,
+              ?sender_order_id: String
+            ) -> void
+
+            def to_hash: -> { order_id: String, sender_order_id: String }
+          end
+
+          type warehouse = { id: String }
+
+          class Warehouse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor id: String
+
+            def initialize: (id: String) -> void
+
+            def to_hash: -> { id: String }
+          end
+        end
+      end
+    end
+  end
+end

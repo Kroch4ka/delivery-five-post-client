@@ -1,0 +1,79 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type cargo =
+          {
+            height: Float,
+            length: Float,
+            price: Float,
+            product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue],
+            sender_cargo_id: String,
+            weight: Float,
+            width: Float,
+            barcode: String,
+            vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+            vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo
+          }
+
+        class Cargo < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor height: Float
+
+          attr_accessor length: Float
+
+          attr_accessor price: Float
+
+          attr_accessor product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue]
+
+          attr_accessor sender_cargo_id: String
+
+          attr_accessor weight: Float
+
+          attr_accessor width: Float
+
+          attr_reader barcode: String?
+
+          def barcode=: (String) -> String
+
+          attr_reader vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate?
+
+          def vat=: (
+            DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate
+          ) -> DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate
+
+          attr_reader vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo?
+
+          def vendor=: (
+            DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo
+          ) -> DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo
+
+          def initialize: (
+            height: Float,
+            length: Float,
+            price: Float,
+            product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue],
+            sender_cargo_id: String,
+            weight: Float,
+            width: Float,
+            ?barcode: String,
+            ?vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+            ?vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo
+          ) -> void
+
+          def to_hash: -> {
+            height: Float,
+            length: Float,
+            price: Float,
+            product_values: ::Array[DeliveryFivePostClient::API::V1::Partners::Orders::ProductValue],
+            sender_cargo_id: String,
+            weight: Float,
+            width: Float,
+            barcode: String,
+            vat: DeliveryFivePostClient::Models::API::V1::Partners::Orders::vat_rate,
+            vendor: DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo
+          }
+        end
+      end
+    end
+  end
+end

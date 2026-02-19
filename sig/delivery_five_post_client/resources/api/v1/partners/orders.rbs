@@ -1,0 +1,39 @@
+module DeliveryFivePostClient
+  module Resources
+    class API
+      class V1
+        class Partners
+          class Orders
+            attr_reader cargo: DeliveryFivePostClient::Resources::API::V1::Partners::Orders::Cargo
+
+            def c2c: (
+              cargoes: ::Array[DeliveryFivePostClient::API::V1::Cargo],
+              cost: DeliveryFivePostClient::API::V1::OrderCost,
+              receiver: DeliveryFivePostClient::API::V1::ClientInfo,
+              receiver_location: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender: DeliveryFivePostClient::API::V1::ClientInfo,
+              sender_location: DeliveryFivePostClient::API::V1::ReceiverLocation,
+              sender_order_id: String,
+              ?client_order_id: String,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> DeliveryFivePostClient::Models::API::V1::Partners::OrderC2cResponse
+
+            def update_client_info: (
+              String order_id,
+              client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> nil
+
+            def update_payment_value: (
+              String order_id,
+              payment_value: Float,
+              ?request_options: DeliveryFivePostClient::request_opts
+            ) -> nil
+
+            def initialize: (client: DeliveryFivePostClient::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

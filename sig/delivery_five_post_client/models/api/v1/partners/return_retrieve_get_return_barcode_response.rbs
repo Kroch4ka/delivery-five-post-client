@@ -1,0 +1,19 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        module Partners
+          type return_retrieve_get_return_barcode_response = { barcode: String }
+
+          class ReturnRetrieveGetReturnBarcodeResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor barcode: String
+
+            def initialize: (barcode: String) -> void
+
+            def to_hash: -> { barcode: String }
+          end
+        end
+      end
+    end
+  end
+end

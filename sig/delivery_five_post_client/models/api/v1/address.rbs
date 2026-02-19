@@ -1,0 +1,56 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type address =
+          {
+            city: String,
+            country: String,
+            house: String,
+            region: String,
+            street: String,
+            zip_code: String,
+            flat: String
+          }
+
+        class Address < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor city: String
+
+          attr_accessor country: String
+
+          attr_accessor house: String
+
+          attr_accessor region: String
+
+          attr_accessor street: String
+
+          attr_accessor zip_code: String
+
+          attr_reader flat: String?
+
+          def flat=: (String) -> String
+
+          def initialize: (
+            city: String,
+            country: String,
+            house: String,
+            region: String,
+            street: String,
+            zip_code: String,
+            ?flat: String
+          ) -> void
+
+          def to_hash: -> {
+            city: String,
+            country: String,
+            house: String,
+            region: String,
+            street: String,
+            zip_code: String,
+            flat: String
+          }
+        end
+      end
+    end
+  end
+end

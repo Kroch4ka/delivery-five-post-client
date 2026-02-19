@@ -1,0 +1,50 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type client_info =
+          {
+            name: String,
+            phone: String,
+            alternative_phone: String,
+            email: String,
+            passport_validation: bool
+          }
+
+        class ClientInfo < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor name: String
+
+          attr_accessor phone: String
+
+          attr_reader alternative_phone: String?
+
+          def alternative_phone=: (String) -> String
+
+          attr_reader email: String?
+
+          def email=: (String) -> String
+
+          attr_reader passport_validation: bool?
+
+          def passport_validation=: (bool) -> bool
+
+          def initialize: (
+            name: String,
+            phone: String,
+            ?alternative_phone: String,
+            ?email: String,
+            ?passport_validation: bool
+          ) -> void
+
+          def to_hash: -> {
+            name: String,
+            phone: String,
+            alternative_phone: String,
+            email: String,
+            passport_validation: bool
+          }
+        end
+      end
+    end
+  end
+end

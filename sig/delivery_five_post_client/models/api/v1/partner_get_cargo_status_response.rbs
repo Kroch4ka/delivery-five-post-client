@@ -1,0 +1,72 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_get_cargo_status_response =
+          {
+            cargoes: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetCargoStatusResponse::Cargo]
+          }
+
+        class PartnerGetCargoStatusResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor cargoes: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetCargoStatusResponse::Cargo]
+
+          def initialize: (
+            cargoes: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetCargoStatusResponse::Cargo]
+          ) -> void
+
+          def to_hash: -> {
+            cargoes: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerGetCargoStatusResponse::Cargo]
+          }
+
+          type cargo =
+            {
+              cargo_id: String,
+              change_date: Time,
+              sender_cargo_id: String,
+              status: String,
+              error_desc: String,
+              mile_type: DeliveryFivePostClient::Models::mile_type
+            }
+
+          class Cargo < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor cargo_id: String
+
+            attr_accessor change_date: Time
+
+            attr_accessor sender_cargo_id: String
+
+            attr_accessor status: String
+
+            attr_reader error_desc: String?
+
+            def error_desc=: (String) -> String
+
+            attr_reader mile_type: DeliveryFivePostClient::Models::mile_type?
+
+            def mile_type=: (
+              DeliveryFivePostClient::Models::mile_type
+            ) -> DeliveryFivePostClient::Models::mile_type
+
+            def initialize: (
+              cargo_id: String,
+              change_date: Time,
+              sender_cargo_id: String,
+              status: String,
+              ?error_desc: String,
+              ?mile_type: DeliveryFivePostClient::Models::mile_type
+            ) -> void
+
+            def to_hash: -> {
+              cargo_id: String,
+              change_date: Time,
+              sender_cargo_id: String,
+              status: String,
+              error_desc: String,
+              mile_type: DeliveryFivePostClient::Models::mile_type
+            }
+          end
+        end
+      end
+    end
+  end
+end

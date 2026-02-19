@@ -1,0 +1,36 @@
+module DeliveryFivePostClient
+  module Models
+    module API
+      module V1
+        type partner_order_labels_response =
+          {
+            labels: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsResponse::Label]
+          }
+
+        class PartnerOrderLabelsResponse < DeliveryFivePostClient::Internal::Type::BaseModel
+          attr_accessor labels: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsResponse::Label]
+
+          def initialize: (
+            labels: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsResponse::Label]
+          ) -> void
+
+          def to_hash: -> {
+            labels: ::Array[DeliveryFivePostClient::Models::API::V1::PartnerOrderLabelsResponse::Label]
+          }
+
+          type label = { label: String, order_id: String }
+
+          class Label < DeliveryFivePostClient::Internal::Type::BaseModel
+            attr_accessor label: String
+
+            attr_accessor order_id: String
+
+            def initialize: (label: String, order_id: String) -> void
+
+            def to_hash: -> { label: String, order_id: String }
+          end
+        end
+      end
+    end
+  end
+end

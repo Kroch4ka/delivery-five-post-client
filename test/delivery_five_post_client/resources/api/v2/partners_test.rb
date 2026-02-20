@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V2::PartnersTest < DeliveryFivePostClient::Test::ResourceTest
   def test_create_return_order_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v2.partners.create_return_order(

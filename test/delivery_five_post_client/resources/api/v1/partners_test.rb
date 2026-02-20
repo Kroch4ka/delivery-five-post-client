@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryFivePostClient::Test::ResourceTest
   def test_retrieve
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v1.partners.retrieve("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 
@@ -21,7 +21,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_create_order_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.create_order(
@@ -60,7 +60,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_delivery_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v1.partners.delivery_params
 
@@ -76,7 +76,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_delivery_to_address_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.delivery_to_address(
@@ -108,7 +108,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_get_actual_cargo_size_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.get_actual_cargo_size(
@@ -131,7 +131,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_get_cargo_status
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v1.partners.get_cargo_status
 
@@ -147,7 +147,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_get_order_history_mass
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v1.partners.get_order_history_mass
 
@@ -163,7 +163,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_get_order_status
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v1.partners.get_order_status
 
@@ -179,7 +179,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_get_receipts_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.get_receipts(
@@ -198,7 +198,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_get_receiver_locations_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.get_receiver_locations(
@@ -217,7 +217,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_get_security_code_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.get_security_code(
@@ -236,7 +236,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_order_labels_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.order_labels(
@@ -255,7 +255,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_pickup_points
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v1.partners.pickup_points
 
@@ -271,7 +271,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::PartnersTest < DeliveryF
   end
 
   def test_retrieve_warehouse_all
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v1.partners.retrieve_warehouse_all
 

@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V1::GetLabelStatusesTest < DeliveryFivePostClient::Test::ResourceTest
   def test_by_sender_order_ids_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.get_label_statuses.by_sender_order_ids(sender_order_ids: ["string"])

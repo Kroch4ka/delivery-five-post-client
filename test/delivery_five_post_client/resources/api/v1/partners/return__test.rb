@@ -4,7 +4,7 @@ require_relative "../../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V1::Partners::ReturnTest < DeliveryFivePostClient::Test::ResourceTest
   def test_retrieve_get_placement_code_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.return_.retrieve_get_placement_code(
@@ -23,7 +23,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::ReturnTest < D
   end
 
   def test_retrieve_get_return_barcode_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.return_.retrieve_get_return_barcode(

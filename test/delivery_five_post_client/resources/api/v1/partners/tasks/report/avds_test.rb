@@ -4,7 +4,7 @@ require_relative "../../../../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V1::Partners::Tasks::Report::AvdsTest < DeliveryFivePostClient::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.tasks.report.avds.create(
@@ -24,7 +24,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::Tasks::Report:
   end
 
   def test_result_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.tasks.report.avds.result(
@@ -37,7 +37,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::Tasks::Report:
   end
 
   def test_status_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.tasks.report.avds.status(

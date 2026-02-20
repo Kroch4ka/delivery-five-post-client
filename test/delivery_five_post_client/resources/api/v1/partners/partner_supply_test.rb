@@ -4,7 +4,7 @@ require_relative "../../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V1::Partners::PartnerSupplyTest < DeliveryFivePostClient::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.partner_supply.create(
@@ -34,7 +34,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::PartnerSupplyT
   end
 
   def test_retrieve
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.partner_supply.retrieve("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
@@ -59,7 +59,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::PartnerSupplyT
   end
 
   def test_update
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.partner_supply.update("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
@@ -84,7 +84,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::PartnerSupplyT
   end
 
   def test_delete
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.partner_supply.delete("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
@@ -101,7 +101,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::PartnerSupplyT
   end
 
   def test_retrieve_partner_supply
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v1.partners.partner_supply.retrieve_partner_supply
 

@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::WebhooksTest < DeliveryFivePostClient::Test::ResourceTest
   def test_create_cargo_status_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.webhooks.create_cargo_status(
@@ -21,7 +21,7 @@ class DeliveryFivePostClient::Test::Resources::WebhooksTest < DeliveryFivePostCl
   end
 
   def test_create_order_status_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.webhooks.create_order_status(

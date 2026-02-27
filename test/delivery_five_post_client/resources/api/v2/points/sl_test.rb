@@ -4,7 +4,7 @@ require_relative "../../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V2::Points::SlTest < DeliveryFivePostClient::Test::ResourceTest
   def test_get_c2c_delivery_terms_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v2.points.sl.get_c2c_delivery_terms(

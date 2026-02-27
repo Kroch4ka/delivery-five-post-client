@@ -4,7 +4,7 @@ require_relative "../../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V3::Partners::OrdersTest < DeliveryFivePostClient::Test::ResourceTest
   def test_cancel_order
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v3.partners.orders.cancel_order("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
@@ -15,7 +15,7 @@ class DeliveryFivePostClient::Test::Resources::API::V3::Partners::OrdersTest < D
   end
 
   def test_create_order_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v3.partners.orders.create_order(

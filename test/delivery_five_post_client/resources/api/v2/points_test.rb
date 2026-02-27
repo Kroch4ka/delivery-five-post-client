@@ -4,7 +4,7 @@ require_relative "../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V2::PointsTest < DeliveryFivePostClient::Test::ResourceTest
   def test_get_c2c_pickup_points
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v2.points.get_c2c_pickup_points
 
@@ -14,7 +14,7 @@ class DeliveryFivePostClient::Test::Resources::API::V2::PointsTest < DeliveryFiv
   end
 
   def test_get_c2c_placement_points
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @delivery_five_post_client.api.v2.points.get_c2c_placement_points
 

@@ -21,10 +21,11 @@ module DeliveryFivePostClient
             def retrieve_get_placement_code(params)
               parsed, options =
                 DeliveryFivePostClient::API::V1::Partners::ReturnRetrieveGetPlacementCodeParams.dump_request(params)
+              query = DeliveryFivePostClient::Internal::Util.encode_query_params(parsed)
               @client.request(
                 method: :get,
                 path: "api/v1/partners/return/getPlacementCode",
-                query: parsed.transform_keys(order_id: "orderId"),
+                query: query.transform_keys(order_id: "orderId"),
                 model: DeliveryFivePostClient::Models::API::V1::Partners::ReturnRetrieveGetPlacementCodeResponse,
                 options: options
               )
@@ -44,10 +45,11 @@ module DeliveryFivePostClient
             def retrieve_get_return_barcode(params)
               parsed, options =
                 DeliveryFivePostClient::API::V1::Partners::ReturnRetrieveGetReturnBarcodeParams.dump_request(params)
+              query = DeliveryFivePostClient::Internal::Util.encode_query_params(parsed)
               @client.request(
                 method: :get,
                 path: "api/v1/partners/return/getReturnBarcode",
-                query: parsed.transform_keys(order_id: "orderId"),
+                query: query.transform_keys(order_id: "orderId"),
                 model: DeliveryFivePostClient::Models::API::V1::Partners::ReturnRetrieveGetReturnBarcodeResponse,
                 options: options
               )

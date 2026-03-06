@@ -22,9 +22,14 @@ module DeliveryFivePostClient
               sig { returns(String) }
               attr_accessor :order_id
 
+              # UUID в формате v4 / UUID in v4 format
+              sig { returns(String) }
+              attr_accessor :cargo_id
+
               sig do
                 params(
                   order_id: String,
+                  cargo_id: String,
                   request_options:
                     DeliveryFivePostClient::RequestOptions::OrHash
                 ).returns(T.attached_class)
@@ -32,6 +37,8 @@ module DeliveryFivePostClient
               def self.new(
                 # UUID в формате v4 / UUID in v4 format
                 order_id:,
+                # UUID в формате v4 / UUID in v4 format
+                cargo_id:,
                 request_options: {}
               )
               end
@@ -40,6 +47,7 @@ module DeliveryFivePostClient
                 override.returns(
                   {
                     order_id: String,
+                    cargo_id: String,
                     request_options: DeliveryFivePostClient::RequestOptions
                   }
                 )

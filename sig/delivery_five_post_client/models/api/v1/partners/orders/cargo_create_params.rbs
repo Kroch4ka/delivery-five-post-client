@@ -6,6 +6,7 @@ module DeliveryFivePostClient
           module Orders
             type cargo_create_params =
               {
+                order_id: String,
                 height: Float,
                 length: Float,
                 price: Float,
@@ -22,6 +23,8 @@ module DeliveryFivePostClient
             class CargoCreateParams < DeliveryFivePostClient::Internal::Type::BaseModel
               extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
               include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+              attr_accessor order_id: String
 
               attr_accessor height: Float
 
@@ -54,6 +57,7 @@ module DeliveryFivePostClient
               ) -> DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo
 
               def initialize: (
+                order_id: String,
                 height: Float,
                 length: Float,
                 price: Float,
@@ -68,6 +72,7 @@ module DeliveryFivePostClient
               ) -> void
 
               def to_hash: -> {
+                order_id: String,
                 height: Float,
                 length: Float,
                 price: Float,

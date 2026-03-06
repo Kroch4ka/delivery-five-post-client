@@ -4,17 +4,22 @@ module DeliveryFivePostClient
       module V1
         module Partners
           type partner_supply_retrieve_params =
-            {  } & DeliveryFivePostClient::Internal::Type::request_parameters
+            { supply_id: String }
+            & DeliveryFivePostClient::Internal::Type::request_parameters
 
           class PartnerSupplyRetrieveParams < DeliveryFivePostClient::Internal::Type::BaseModel
             extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
             include DeliveryFivePostClient::Internal::Type::RequestParameters
 
+            attr_accessor supply_id: String
+
             def initialize: (
+              supply_id: String,
               ?request_options: DeliveryFivePostClient::request_opts
             ) -> void
 
             def to_hash: -> {
+              supply_id: String,
               request_options: DeliveryFivePostClient::RequestOptions
             }
           end

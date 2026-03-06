@@ -18,6 +18,10 @@ module DeliveryFivePostClient
                   )
                 end
 
+              # UUID в формате v4 / UUID in v4 format
+              sig { returns(String) }
+              attr_accessor :order_id
+
               # Высота в см / Height in cm
               sig { returns(Float) }
               attr_accessor :height
@@ -97,6 +101,7 @@ module DeliveryFivePostClient
 
               sig do
                 params(
+                  order_id: String,
                   height: Float,
                   length: Float,
                   price: Float,
@@ -117,6 +122,8 @@ module DeliveryFivePostClient
                 ).returns(T.attached_class)
               end
               def self.new(
+                # UUID в формате v4 / UUID in v4 format
+                order_id:,
                 # Высота в см / Height in cm
                 height:,
                 # Длина в см / Length in cm
@@ -144,6 +151,7 @@ module DeliveryFivePostClient
               sig do
                 override.returns(
                   {
+                    order_id: String,
                     height: Float,
                     length: Float,
                     price: Float,

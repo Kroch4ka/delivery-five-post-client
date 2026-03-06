@@ -7,6 +7,7 @@ module DeliveryFivePostClient
             type cargo_update_params =
               {
                 order_id: String,
+                cargo_id: String,
                 height: Float,
                 length: Float,
                 price: Float,
@@ -23,6 +24,8 @@ module DeliveryFivePostClient
               include DeliveryFivePostClient::Internal::Type::RequestParameters
 
               attr_accessor order_id: String
+
+              attr_accessor cargo_id: String
 
               attr_reader height: Float?
 
@@ -64,6 +67,7 @@ module DeliveryFivePostClient
 
               def initialize: (
                 order_id: String,
+                cargo_id: String,
                 ?height: Float,
                 ?length: Float,
                 ?price: Float,
@@ -77,6 +81,7 @@ module DeliveryFivePostClient
 
               def to_hash: -> {
                 order_id: String,
+                cargo_id: String,
                 height: Float,
                 length: Float,
                 price: Float,

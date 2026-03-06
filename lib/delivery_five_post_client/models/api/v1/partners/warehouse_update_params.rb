@@ -10,6 +10,12 @@ module DeliveryFivePostClient
             extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
             include DeliveryFivePostClient::Internal::Type::RequestParameters
 
+            # @!attribute id
+            #   UUID в формате v4 / UUID in v4 format
+            #
+            #   @return [String]
+            required :id, String
+
             # @!attribute address
             #   Обновление адреса / Address update
             #
@@ -28,7 +34,9 @@ module DeliveryFivePostClient
             #   @return [String, nil]
             optional :name, String
 
-            # @!method initialize(address: nil, contacts: nil, name: nil, request_options: {})
+            # @!method initialize(id:, address: nil, contacts: nil, name: nil, request_options: {})
+            #   @param id [String] UUID в формате v4 / UUID in v4 format
+            #
             #   @param address [DeliveryFivePostClient::Models::API::V1::Partners::WarehouseUpdateParams::Address] Обновление адреса / Address update
             #
             #   @param contacts [DeliveryFivePostClient::Models::API::V1::Partners::WarehouseUpdateParams::Contacts] Обновление контактов / Contacts update

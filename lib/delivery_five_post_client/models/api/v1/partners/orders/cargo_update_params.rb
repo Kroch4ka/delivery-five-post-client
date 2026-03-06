@@ -17,6 +17,12 @@ module DeliveryFivePostClient
               #   @return [String]
               required :order_id, String
 
+              # @!attribute cargo_id
+              #   UUID в формате v4 / UUID in v4 format
+              #
+              #   @return [String]
+              required :cargo_id, String
+
               # @!attribute height
               #   Новая высота в см / New height in cm
               #
@@ -69,8 +75,10 @@ module DeliveryFivePostClient
               #   @return [Float, nil]
               optional :width, Float
 
-              # @!method initialize(order_id:, height: nil, length: nil, price: nil, product_values: nil, vat: nil, vendor: nil, weight: nil, width: nil, request_options: {})
+              # @!method initialize(order_id:, cargo_id:, height: nil, length: nil, price: nil, product_values: nil, vat: nil, vendor: nil, weight: nil, width: nil, request_options: {})
               #   @param order_id [String] UUID в формате v4 / UUID in v4 format
+              #
+              #   @param cargo_id [String] UUID в формате v4 / UUID in v4 format
               #
               #   @param height [Float] Новая высота в см / New height in cm
               #

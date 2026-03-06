@@ -10,7 +10,15 @@ module DeliveryFivePostClient
             extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
             include DeliveryFivePostClient::Internal::Type::RequestParameters
 
-            # @!method initialize(request_options: {})
+            # @!attribute supply_id
+            #   UUID в формате v4 / UUID in v4 format
+            #
+            #   @return [String]
+            required :supply_id, String
+
+            # @!method initialize(supply_id:, request_options: {})
+            #   @param supply_id [String] UUID в формате v4 / UUID in v4 format
+            #
             #   @param request_options [DeliveryFivePostClient::RequestOptions, Hash{Symbol=>Object}]
           end
         end

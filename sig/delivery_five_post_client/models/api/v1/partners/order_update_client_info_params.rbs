@@ -5,6 +5,7 @@ module DeliveryFivePostClient
         module Partners
           type order_update_client_info_params =
             {
+              order_id: String,
               client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client
             }
             & DeliveryFivePostClient::Internal::Type::request_parameters
@@ -13,14 +14,18 @@ module DeliveryFivePostClient
             extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
             include DeliveryFivePostClient::Internal::Type::RequestParameters
 
+            attr_accessor order_id: String
+
             attr_accessor client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client
 
             def initialize: (
+              order_id: String,
               client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client,
               ?request_options: DeliveryFivePostClient::request_opts
             ) -> void
 
             def to_hash: -> {
+              order_id: String,
               client: DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client,
               request_options: DeliveryFivePostClient::RequestOptions
             }

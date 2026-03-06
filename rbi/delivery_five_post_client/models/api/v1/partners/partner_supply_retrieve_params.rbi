@@ -17,17 +17,29 @@ module DeliveryFivePostClient
                 )
               end
 
+            # UUID в формате v4 / UUID in v4 format
+            sig { returns(String) }
+            attr_accessor :supply_id
+
             sig do
               params(
+                supply_id: String,
                 request_options: DeliveryFivePostClient::RequestOptions::OrHash
               ).returns(T.attached_class)
             end
-            def self.new(request_options: {})
+            def self.new(
+              # UUID в формате v4 / UUID in v4 format
+              supply_id:,
+              request_options: {}
+            )
             end
 
             sig do
               override.returns(
-                { request_options: DeliveryFivePostClient::RequestOptions }
+                {
+                  supply_id: String,
+                  request_options: DeliveryFivePostClient::RequestOptions
+                }
               )
             end
             def to_hash

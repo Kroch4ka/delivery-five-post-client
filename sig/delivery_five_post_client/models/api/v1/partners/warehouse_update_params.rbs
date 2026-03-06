@@ -5,6 +5,7 @@ module DeliveryFivePostClient
         module Partners
           type warehouse_update_params =
             {
+              id: String,
               address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address,
               contacts: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts,
               name: String
@@ -14,6 +15,8 @@ module DeliveryFivePostClient
           class WarehouseUpdateParams < DeliveryFivePostClient::Internal::Type::BaseModel
             extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
             include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_accessor id: String
 
             attr_reader address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address?
 
@@ -32,6 +35,7 @@ module DeliveryFivePostClient
             def name=: (String) -> String
 
             def initialize: (
+              id: String,
               ?address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address,
               ?contacts: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts,
               ?name: String,
@@ -39,6 +43,7 @@ module DeliveryFivePostClient
             ) -> void
 
             def to_hash: -> {
+              id: String,
               address: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address,
               contacts: DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Contacts,
               name: String,

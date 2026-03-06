@@ -22,6 +22,10 @@ module DeliveryFivePostClient
               sig { returns(String) }
               attr_accessor :order_id
 
+              # UUID в формате v4 / UUID in v4 format
+              sig { returns(String) }
+              attr_accessor :cargo_id
+
               # Новая высота в см / New height in cm
               sig { returns(T.nilable(Float)) }
               attr_reader :height
@@ -118,6 +122,7 @@ module DeliveryFivePostClient
               sig do
                 params(
                   order_id: String,
+                  cargo_id: String,
                   height: Float,
                   length: Float,
                   price: Float,
@@ -138,6 +143,8 @@ module DeliveryFivePostClient
               def self.new(
                 # UUID в формате v4 / UUID in v4 format
                 order_id:,
+                # UUID в формате v4 / UUID in v4 format
+                cargo_id:,
                 # Новая высота в см / New height in cm
                 height: nil,
                 # Новая длина в см / New length in cm
@@ -162,6 +169,7 @@ module DeliveryFivePostClient
                 override.returns(
                   {
                     order_id: String,
+                    cargo_id: String,
                     height: Float,
                     length: Float,
                     price: Float,

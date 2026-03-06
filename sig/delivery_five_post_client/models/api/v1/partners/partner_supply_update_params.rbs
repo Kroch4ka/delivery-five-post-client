@@ -5,6 +5,7 @@ module DeliveryFivePostClient
         module Partners
           type partner_supply_update_params =
             {
+              supply_id: String,
               cargoes: ::Array[DeliveryFivePostClient::API::V1::Partners::SupplyCargo],
               planned_date: Date
             }
@@ -13,6 +14,8 @@ module DeliveryFivePostClient
           class PartnerSupplyUpdateParams < DeliveryFivePostClient::Internal::Type::BaseModel
             extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
             include DeliveryFivePostClient::Internal::Type::RequestParameters
+
+            attr_accessor supply_id: String
 
             attr_reader cargoes: ::Array[DeliveryFivePostClient::API::V1::Partners::SupplyCargo]?
 
@@ -25,12 +28,14 @@ module DeliveryFivePostClient
             def planned_date=: (Date) -> Date
 
             def initialize: (
+              supply_id: String,
               ?cargoes: ::Array[DeliveryFivePostClient::API::V1::Partners::SupplyCargo],
               ?planned_date: Date,
               ?request_options: DeliveryFivePostClient::request_opts
             ) -> void
 
             def to_hash: -> {
+              supply_id: String,
               cargoes: ::Array[DeliveryFivePostClient::API::V1::Partners::SupplyCargo],
               planned_date: Date,
               request_options: DeliveryFivePostClient::RequestOptions

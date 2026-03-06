@@ -17,6 +17,10 @@ module DeliveryFivePostClient
                 )
               end
 
+            # UUID в формате v4 / UUID in v4 format
+            sig { returns(String) }
+            attr_accessor :id
+
             # Обновление адреса / Address update
             sig do
               returns(
@@ -62,6 +66,7 @@ module DeliveryFivePostClient
 
             sig do
               params(
+                id: String,
                 address:
                   DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address::OrHash,
                 contacts:
@@ -71,6 +76,8 @@ module DeliveryFivePostClient
               ).returns(T.attached_class)
             end
             def self.new(
+              # UUID в формате v4 / UUID in v4 format
+              id:,
               # Обновление адреса / Address update
               address: nil,
               # Обновление контактов / Contacts update
@@ -84,6 +91,7 @@ module DeliveryFivePostClient
             sig do
               override.returns(
                 {
+                  id: String,
                   address:
                     DeliveryFivePostClient::API::V1::Partners::WarehouseUpdateParams::Address,
                   contacts:

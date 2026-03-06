@@ -17,6 +17,10 @@ module DeliveryFivePostClient
                 )
               end
 
+            # UUID в формате v4 / UUID in v4 format
+            sig { returns(String) }
+            attr_accessor :supply_id
+
             # Грузоместа в поставке / Cargoes
             sig do
               returns(
@@ -48,6 +52,7 @@ module DeliveryFivePostClient
 
             sig do
               params(
+                supply_id: String,
                 cargoes:
                   T::Array[
                     DeliveryFivePostClient::API::V1::Partners::SupplyCargo::OrHash
@@ -57,6 +62,8 @@ module DeliveryFivePostClient
               ).returns(T.attached_class)
             end
             def self.new(
+              # UUID в формате v4 / UUID in v4 format
+              supply_id:,
               # Грузоместа в поставке / Cargoes
               cargoes: nil,
               # Плановая дата поставки / Planned date
@@ -68,6 +75,7 @@ module DeliveryFivePostClient
             sig do
               override.returns(
                 {
+                  supply_id: String,
                   cargoes:
                     T::Array[
                       DeliveryFivePostClient::API::V1::Partners::SupplyCargo

@@ -4,7 +4,7 @@ require_relative "../../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V1::Partners::RedirectionTest < DeliveryFivePostClient::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.redirection.create(
@@ -24,7 +24,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::RedirectionTes
   end
 
   def test_status_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.redirection.status(

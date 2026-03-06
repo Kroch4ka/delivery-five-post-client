@@ -17,8 +17,16 @@ module DeliveryFivePostClient
               #   @return [String]
               required :order_id, String
 
-              # @!method initialize(order_id:, request_options: {})
+              # @!attribute cargo_id
+              #   UUID в формате v4 / UUID in v4 format
+              #
+              #   @return [String]
+              required :cargo_id, String
+
+              # @!method initialize(order_id:, cargo_id:, request_options: {})
               #   @param order_id [String] UUID в формате v4 / UUID in v4 format
+              #
+              #   @param cargo_id [String] UUID в формате v4 / UUID in v4 format
               #
               #   @param request_options [DeliveryFivePostClient::RequestOptions, Hash{Symbol=>Object}]
             end

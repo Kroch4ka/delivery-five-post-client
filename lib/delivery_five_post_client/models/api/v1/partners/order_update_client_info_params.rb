@@ -10,13 +10,21 @@ module DeliveryFivePostClient
             extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
             include DeliveryFivePostClient::Internal::Type::RequestParameters
 
+            # @!attribute order_id
+            #   UUID в формате v4 / UUID in v4 format
+            #
+            #   @return [String]
+            required :order_id, String
+
             # @!attribute client
             #   Обновление информации о клиенте / Client information update
             #
             #   @return [DeliveryFivePostClient::Models::API::V1::Partners::OrderUpdateClientInfoParams::Client]
             required :client, -> { DeliveryFivePostClient::API::V1::Partners::OrderUpdateClientInfoParams::Client }
 
-            # @!method initialize(client:, request_options: {})
+            # @!method initialize(order_id:, client:, request_options: {})
+            #   @param order_id [String] UUID в формате v4 / UUID in v4 format
+            #
             #   @param client [DeliveryFivePostClient::Models::API::V1::Partners::OrderUpdateClientInfoParams::Client] Обновление информации о клиенте / Client information update
             #
             #   @param request_options [DeliveryFivePostClient::RequestOptions, Hash{Symbol=>Object}]

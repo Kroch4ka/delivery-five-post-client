@@ -17,17 +17,24 @@ module DeliveryFivePostClient
                 )
               end
 
+            # UUID в формате v4 / UUID in v4 format
+            sig { returns(String) }
+            attr_accessor :order_id
+
             # Новая сумма наложенного платежа / New payment value
             sig { returns(Float) }
             attr_accessor :payment_value
 
             sig do
               params(
+                order_id: String,
                 payment_value: Float,
                 request_options: DeliveryFivePostClient::RequestOptions::OrHash
               ).returns(T.attached_class)
             end
             def self.new(
+              # UUID в формате v4 / UUID in v4 format
+              order_id:,
               # Новая сумма наложенного платежа / New payment value
               payment_value:,
               request_options: {}
@@ -37,6 +44,7 @@ module DeliveryFivePostClient
             sig do
               override.returns(
                 {
+                  order_id: String,
                   payment_value: Float,
                   request_options: DeliveryFivePostClient::RequestOptions
                 }

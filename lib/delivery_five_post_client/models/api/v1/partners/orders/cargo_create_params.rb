@@ -11,6 +11,12 @@ module DeliveryFivePostClient
               extend DeliveryFivePostClient::Internal::Type::RequestParameters::Converter
               include DeliveryFivePostClient::Internal::Type::RequestParameters
 
+              # @!attribute order_id
+              #   UUID в формате v4 / UUID in v4 format
+              #
+              #   @return [String]
+              required :order_id, String
+
               # @!attribute height
               #   Высота в см / Height in cm
               #
@@ -75,7 +81,9 @@ module DeliveryFivePostClient
               #   @return [DeliveryFivePostClient::Models::API::V1::Partners::Orders::VendorInfo, nil]
               optional :vendor, -> { DeliveryFivePostClient::API::V1::Partners::Orders::VendorInfo }
 
-              # @!method initialize(height:, length:, price:, product_values:, sender_cargo_id:, weight:, width:, barcode: nil, vat: nil, vendor: nil, request_options: {})
+              # @!method initialize(order_id:, height:, length:, price:, product_values:, sender_cargo_id:, weight:, width:, barcode: nil, vat: nil, vendor: nil, request_options: {})
+              #   @param order_id [String] UUID в формате v4 / UUID in v4 format
+              #
               #   @param height [Float] Высота в см / Height in cm
               #
               #   @param length [Float] Длина в см / Length in cm

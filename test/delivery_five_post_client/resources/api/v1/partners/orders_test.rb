@@ -4,7 +4,7 @@ require_relative "../../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V1::Partners::OrdersTest < DeliveryFivePostClient::Test::ResourceTest
   def test_c2c_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.orders.c2c(
@@ -41,7 +41,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::OrdersTest < D
   end
 
   def test_update_client_info_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.orders.update_client_info(
@@ -55,7 +55,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::OrdersTest < D
   end
 
   def test_update_payment_value_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.orders.update_payment_value(

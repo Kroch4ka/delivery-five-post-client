@@ -120,10 +120,11 @@ module DeliveryFivePostClient
             def retrieve_partner_supply(params = {})
               parsed, options =
                 DeliveryFivePostClient::API::V1::Partners::PartnerSupplyRetrievePartnerSupplyParams.dump_request(params)
+              query = DeliveryFivePostClient::Internal::Util.encode_query_params(parsed)
               @client.request(
                 method: :get,
                 path: "api/v1/partners/partnerSupply",
-                query: parsed.transform_keys(date_from: "dateFrom", date_to: "dateTo"),
+                query: query.transform_keys(date_from: "dateFrom", date_to: "dateTo"),
                 model: DeliveryFivePostClient::Models::API::V1::Partners::PartnerSupplyRetrievePartnerSupplyResponse,
                 options: options
               )

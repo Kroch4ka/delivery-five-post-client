@@ -4,7 +4,7 @@ require_relative "../../../../test_helper"
 
 class DeliveryFivePostClient::Test::Resources::API::V1::Partners::ExtendStorageDaysTest < DeliveryFivePostClient::Test::ResourceTest
   def test_extend_storage_days_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.extend_storage_days.extend_storage_days(
@@ -24,7 +24,7 @@ class DeliveryFivePostClient::Test::Resources::API::V1::Partners::ExtendStorageD
   end
 
   def test_status_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @delivery_five_post_client.api.v1.partners.extend_storage_days.status(
